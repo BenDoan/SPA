@@ -1,0 +1,1573 @@
+{
+    "1151": {
+        "CSCI": {
+            "1200": {
+                "number": "1200",
+                "title": "CS PRINCIPLES",
+                "desc": "This course introduces students to the foundational principles of computer science. It aims to help students learn the essential thought processes used by computer scientists to solve problems, expressing those solutions as computer programs. The exercises and projects make use of mobile devices and other emerging platforms.",
+                "prereq": "Prereq: MATH 1310 or equivalent.",
+                "sections": {
+                    "001": {
+                        "Class Number": "21803?",
+                        "Type": "LEC",
+                        "Enrolled": "30",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Natural/Physical Science General Education course",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "9:00AM - 10:15AM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 276",
+                        "Instructor": "Ashwathy P Ashokan"
+                    },
+                    "002": {
+                        "Class Number": "24672?",
+                        "Type": "LEC",
+                        "Enrolled": "23",
+                        "Class Max": "20",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Natural/Physical Science General Education course",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "9:00AM - 11:45AM",
+                        "Days": "F",
+                        "Location": "Peter Kiewit Institute 260",
+                        "Instructor": "Jong-Hoon Youn"
+                    },
+                    "003": {
+                        "Class Number": "25271?",
+                        "Type": "LEC",
+                        "Enrolled": "28",
+                        "Class Max": "25",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Natural/Physical Sci General Education lecture",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "9:00AM - 10:15AM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 260",
+                        "Instructor": "Jong-Hoon Youn"
+                    },
+                    "099": {
+                        "Class Number": "20389?",
+                        "Type": "LEC",
+                        "Enrolled": "9",
+                        "Class Max": "10",
+                        "Seats Available": "1",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Natural/Physical Science General Education course",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "9:00AM - 11:45AM",
+                        "Days": "F",
+                        "Location": "Peter Kiewit Institute 260",
+                        "Instructor": "Jong-Hoon Youn"
+                    }
+                }
+            },
+            "1204": {
+                "number": "1204",
+                "title": "CSCI PRINCIPLES LAB",
+                "desc": "This is a laboratory course for students enrolled in CSCI 1200 (Computer Science Principles). It consists of programming exercises designed to help students practice computational thinking and apply computational solutions to practical problems. The exercises make use of mobile devices and other emerging platforms.",
+                "prereq": "Prereq: CSCI 1200, prior or concurrent.",
+                "sections": {
+                    "001": {
+                        "Class Number": "21305?",
+                        "Type": "LAB",
+                        "Enrolled": "24",
+                        "Class Max": "25",
+                        "Seats Available": "1",
+                        "Credit Hours": "1",
+                        "Course Attribute": "Natural/Physical Sci General Education lab course",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "T",
+                        "Location": "Peter Kiewit Institute 260"
+                    },
+                    "002": {
+                        "Class Number": "21306?",
+                        "Type": "LAB",
+                        "Enrolled": "26",
+                        "Class Max": "25",
+                        "Seats Available": "0",
+                        "Credit Hours": "1",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Natural/Physical Sci General Education lab course",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "F",
+                        "Location": "Peter Kiewit Institute 260"
+                    }
+                }
+            },
+            "1620": {
+                "number": "1620",
+                "title": "INTRODUCTN TO COMPUTER SCI II",
+                "desc": "Continuation of CIST 1400. Advanced topics in programming; topics in data representation and manipulation, data structures, problem solving and algorithm design.",
+                "prereq": "Prereq: CSCI 1610 or CIST 1400; and MATH 1930 or MATH 1950",
+                "sections": {
+                    "001": {
+                        "Class Number": "17968?",
+                        "Type": "LEC",
+                        "Enrolled": "30",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "10:30AM - 11:45AM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 274",
+                        "Instructor": "Patrick M. Cavanaugh"
+                    },
+                    "002": {
+                        "Class Number": "17967?",
+                        "Type": "LEC",
+                        "Enrolled": "34",
+                        "Class Max": "34",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "12:00PM - 1:15PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 155",
+                        "Instructor": "Patrick M. Cavanaugh"
+                    },
+                    "003": {
+                        "Class Number": "17970?",
+                        "Type": "LEC",
+                        "Enrolled": "42",
+                        "Class Max": "35",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "9:00AM - 10:15AM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 153",
+                        "Instructor": "Mark Allan Pauley"
+                    },
+                    "004": {
+                        "Class Number": "17969?",
+                        "Type": "LEC",
+                        "Enrolled": "39",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "12:00PM - 1:15PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 155",
+                        "Instructor": "Nolan A Hemmatazad"
+                    },
+                    "005": {
+                        "Class Number": "20849?",
+                        "Type": "LEC",
+                        "Enrolled": "30",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "5:30PM - 6:45PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 270",
+                        "Instructor": "Mai Ren"
+                    },
+                    "098": {
+                        "Class Number": "19760?",
+                        "Type": "LEC",
+                        "Enrolled": "4",
+                        "Class Max": "4",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Honors Program Students Only",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "10:30AM - 11:45AM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 274",
+                        "Instructor": "Patrick M. Cavanaugh"
+                    }
+                }
+            },
+            "2030": {
+                "number": "2030",
+                "title": "MATHEMATICAL FOUNDATIONS OF CS",
+                "desc": "This course introduces discrete mathematics concepts that are foundational for the study of computer science such as functions, relations, and sets, basic logic, methods of proof, mathematical induction, computational complexity, recursion, counting, recurrences, and relations.",
+                "prereq": "Prereq: CIST 1400, MATH 1950 or MATH 1930",
+                "sections": {
+                    "001": {
+                        "Class Number": "19597?",
+                        "Type": "LEC",
+                        "Enrolled": "31",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "10:30AM - 11:45AM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 261",
+                        "Instructor": "Mahadevan Subramaniam"
+                    },
+                    "002": {
+                        "Class Number": "19598?",
+                        "Type": "LEC",
+                        "Enrolled": "29",
+                        "Class Max": "30",
+                        "Seats Available": "1",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 256",
+                        "Instructor": "Victor L Winter"
+                    },
+                    "003": {
+                        "Class Number": "21806?",
+                        "Type": "LEC",
+                        "Enrolled": "25",
+                        "Class Max": "30",
+                        "Seats Available": "5",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 261",
+                        "Instructor": "Yuliya Lierler"
+                    },
+                    "098": {
+                        "Class Number": "19761?",
+                        "Type": "LEC",
+                        "Enrolled": "2",
+                        "Class Max": "5",
+                        "Seats Available": "3",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Honors Program Students Only",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 256",
+                        "Instructor": "Victor L Winter"
+                    }
+                }
+            },
+            "2240": {
+                "number": "2240",
+                "title": "INTRO TO C PROGRAMMING",
+                "desc": "Programming in 'C' in a UNIX operating system environment; algorithm and program development and file manipulation using 'C'; UNIX-like utility development.",
+                "prereq": "Prereq: CSCI 1620; Facility w/high-level prog lang like Pascal, Modula, Java, or C++; Ability to design & implement solutions to modest problems.",
+                "sections": {
+                    "001": {
+                        "Class Number": "17973?",
+                        "Type": "LEC",
+                        "Enrolled": "29",
+                        "Class Max": "30",
+                        "Seats Available": "1",
+                        "Credit Hours": "3",
+                        "Topic": "PROGRAMMING IN C",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 155",
+                        "Instructor": "Prithviraj Dasgupta"
+                    },
+                    "002": {
+                        "Class Number": "20850?",
+                        "Type": "LEC",
+                        "Enrolled": "15",
+                        "Class Max": "30",
+                        "Seats Available": "15",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "12:00PM - 1:15PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 260",
+                        "Instructor": "Sachin Sudhakar Pawaskar"
+                    },
+                    "003": {
+                        "Class Number": "22163?",
+                        "Type": "LEC",
+                        "Enrolled": "18",
+                        "Class Max": "30",
+                        "Seats Available": "12",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "5:30PM - 6:45PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 164",
+                        "Instructor": "Jose A Baca Garcia"
+                    },
+                    "098": {
+                        "Class Number": "20277?",
+                        "Type": "LEC",
+                        "Enrolled": "4",
+                        "Class Max": "5",
+                        "Seats Available": "1",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Honors Program Students Only",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 155",
+                        "Instructor": "Prithviraj Dasgupta"
+                    },
+                    "850": {
+                        "Class Number": "17972?",
+                        "Type": "LEC",
+                        "Enrolled": "28",
+                        "Class Max": "28",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Topic": "PROGRAMMING IN C",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "TBA",
+                        "Days": "TBA",
+                        "Location": "Totally Online",
+                        "Instructor": "Patrick M. Cavanaugh"
+                    }
+                }
+            },
+            "2510": {
+                "number": "2510",
+                "title": "INTRO TO GAME PROGRAMMING",
+                "desc": "The course will cover programming and development techniques used in a game programming environment. The course is designed for students who have an interest in game programming to be eased into the concepts in a familiar environment.",
+                "prereq": "Prereq: CSCI 1840. Not open to nondegree students.",
+                "sections": {
+                    "001": {
+                        "Class Number": "17974?",
+                        "Type": "LEC",
+                        "Enrolled": "21",
+                        "Class Max": "30",
+                        "Seats Available": "9",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "10:30AM - 11:45AM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 276",
+                        "Instructor": "Patrick M. Cavanaugh"
+                    },
+                    "098": {
+                        "Class Number": "19762?",
+                        "Type": "LEC",
+                        "Enrolled": "1",
+                        "Class Max": "5",
+                        "Seats Available": "4",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Honors Program Students Only",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "10:30AM - 11:45AM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 276",
+                        "Instructor": "Patrick M. Cavanaugh"
+                    }
+                }
+            },
+            "2850": {
+                "number": "2850",
+                "title": "PROGRAMMING ON THE INTERNET",
+                "desc": "This course is an introduction to and overview of Internet-based application development focusing on the use of Java, Perl and other server-based programming languages. Software development in the context of the World Wide Web and other Internet services will be emphasized. Internet application development will also be discussed. Other techniques will be covered.",
+                "prereq": "Prereq: CSCI1620 or CSCI1840",
+                "sections": {
+                    "001": {
+                        "Class Number": "17977?",
+                        "Type": "LEC",
+                        "Enrolled": "29",
+                        "Class Max": "30",
+                        "Seats Available": "1",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "12:00PM - 1:15PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 274",
+                        "Instructor": "Robert A Fulkerson"
+                    },
+                    "098": {
+                        "Class Number": "17976?",
+                        "Type": "LEC",
+                        "Enrolled": "1",
+                        "Class Max": "5",
+                        "Seats Available": "4",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Honors Program Students Only",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "12:00PM - 1:15PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 274",
+                        "Instructor": "Robert A Fulkerson"
+                    }
+                }
+            },
+            "3100": {
+                "number": "3100",
+                "title": "APPLIED COMBINATORICS",
+                "desc": "Basic counting methods, generating functions, recurrence relations, principle of inclusion-exclusion. Polya's formula. Elements of graph theory, trees and searching network algorithms.  Cross-listed with CSCI8105, MATH3100, MATH8105.",
+                "prereq": "Prereq: MATH 2030 or 2040 or 2230",
+                "sections": {
+                    "001": {
+                        "Class Number": "17978?",
+                        "Type": "LEC",
+                        "Enrolled": "5",
+                        "Class Max": "10",
+                        "Seats Available": "5",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "4:00PM - 5:15PM",
+                        "Days": "MW",
+                        "Location": "Durham Science Center 256",
+                        "Instructor": "John Konvalina"
+                    }
+                }
+            },
+            "3300": {
+                "number": "3300",
+                "title": "NUMERICAL METHODS",
+                "desc": "This course involves solving equations and systems of equations, interpolation, numerical differentiation and integration, numerical solutions to ordinary differential equations, numerical calculations of eigenvalues and eigenvectors, analysis of algorithms and errors, computational efficiency.  Cross-listed with CSCI8305, MATH3300, MATH8305.",
+                "prereq": "Prereq: MATH 1960, MATH 2050, and MATH 2350",
+                "sections": {
+                    "001": {
+                        "Class Number": "19562?",
+                        "Type": "LEC",
+                        "Enrolled": "1",
+                        "Class Max": "20",
+                        "Seats Available": "19",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "4:00PM - 5:15PM",
+                        "Days": "MW",
+                        "Location": "Durham Science Center 304",
+                        "Instructor": "Mahboub Baccouch"
+                    }
+                }
+            },
+            "3320": {
+                "number": "3320",
+                "title": "DATA STRUCTURES",
+                "desc": "This is a core that will cover a number of data structures such as tree, hashing, priority queues and graphs as well as different algorithm design methods by examining  common problem-solving techniques. Cross-listed with CSCI8325.",
+                "prereq": "Prereq: CSCI 1620 and CSCI 2030 or MATH 2030. Programming Languages: Java or C++ Topics: Arrays, Pointers, Introductory Lists, Storage Allocation",
+                "sections": {
+                    "001": {
+                        "Class Number": "17981?",
+                        "Type": "LEC",
+                        "Enrolled": "25",
+                        "Class Max": "25",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 274",
+                        "Instructor": "Jong-Hoon Youn"
+                    },
+                    "002": {
+                        "Class Number": "17980?",
+                        "Type": "LEC",
+                        "Enrolled": "25",
+                        "Class Max": "25",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "4:00PM - 5:15PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 153",
+                        "Instructor": "Prithviraj Dasgupta"
+                    },
+                    "003": {
+                        "Class Number": "20977?",
+                        "Type": "LEC",
+                        "Enrolled": "23",
+                        "Class Max": "25",
+                        "Seats Available": "2",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "10:30AM - 11:45AM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 276",
+                        "Instructor": "Sachin Sudhakar Pawaskar"
+                    },
+                    "098": {
+                        "Class Number": "17979?",
+                        "Type": "LEC",
+                        "Enrolled": "2",
+                        "Class Max": "5",
+                        "Seats Available": "3",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Honors Program Students Only",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 274",
+                        "Instructor": "Jong-Hoon Youn"
+                    }
+                }
+            },
+            "3550": {
+                "number": "3550",
+                "title": "COMMUNICATION NETWORKS",
+                "desc": "This course is designed to bring students up to the state of the art in networking technologies with a focus on Internet. It will cover the principles of networking with an emphasis on protocols, implementations and design issues.  Cross-listed with CSCI8555.",
+                "prereq": "Prereq: CSCI 3320/8325. Data structures and algorithms. C or C++ programming.",
+                "sections": {
+                    "001": {
+                        "Class Number": "17989?",
+                        "Type": "LEC",
+                        "Enrolled": "26",
+                        "Class Max": "25",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "4:00PM - 5:15PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 263",
+                        "Instructor": "M H Azadmanesh"
+                    }
+                }
+            },
+            "3660": {
+                "number": "3660",
+                "title": "THEORY OF COMPUTATION",
+                "desc": "The course is intended to introduce the students to the theory of computation in a fashion that emphasizes breadth and away from detailed analysis found in a normal undergraduate automata course. The topics covered in the course include methods of proofs, finite automata, non-determinism, regular expressions, context-free grammars, pushdown automata, no-context free languages, Church-Turing Thesis, decidability, reducibility, and space and time complexity.",
+                "prereq": "Prereq: CSCI 3320",
+                "sections": {
+                    "001": {
+                        "Class Number": "17982?",
+                        "Type": "LEC",
+                        "Enrolled": "21",
+                        "Class Max": "25",
+                        "Seats Available": "4",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "10:30AM - 11:45AM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 153",
+                        "Instructor": "Haifeng Guo"
+                    },
+                    "002": {
+                        "Class Number": "22164?",
+                        "Type": "LEC",
+                        "Enrolled": "18",
+                        "Class Max": "25",
+                        "Seats Available": "7",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 153",
+                        "Instructor": "Haifeng Guo"
+                    }
+                }
+            },
+            "3710": {
+                "number": "3710",
+                "title": "INTRO TO DIGITAL DESIGN",
+                "desc": "The course is intended to introduce the students to the topics found in introductory digital design and computer organization classes.",
+                "prereq": "Prereq: CSCI 3320 (could be taken concurrently)",
+                "sections": {
+                    "001": {
+                        "Class Number": "17975?",
+                        "Type": "LEC",
+                        "Enrolled": "29",
+                        "Class Max": "25",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "12:00PM - 1:15PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 263",
+                        "Instructor": "Hassan Abd Al-Rahmanan Farhat"
+                    },
+                    "002": {
+                        "Class Number": "21268?",
+                        "Type": "LEC",
+                        "Enrolled": "26",
+                        "Class Max": "25",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 263",
+                        "Instructor": "Hassan Abd Al-Rahmanan Farhat"
+                    }
+                }
+            },
+            "3830": {
+                "number": "3830",
+                "title": "ADVANCED JAVA PROGRAMMING",
+                "desc": "This course teaches students Web-based programming techniques in the Java programming language. It begins with programming using traditional models such as the client-server model and then transitions to advanced programming paradigms including middleware programming using RMI and CORBA, the distributed JINI/JavaSpaces model, the peer-to-peer networking model and the agent-based programming model.",
+                "prereq": "Prereq: CSCI 1620 and CSCI 2830 or CIST 1400",
+                "sections": {
+                    "850": {
+                        "Class Number": "20278?",
+                        "Type": "LEC",
+                        "Enrolled": "26",
+                        "Class Max": "25",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "TBA",
+                        "Days": "TBA",
+                        "Location": "Totally Online",
+                        "Instructor": "Wenhua Tang"
+                    }
+                }
+            },
+            "4000": {
+                "number": "4000",
+                "title": "ASSESSMENT",
+                "desc": "This course provides various resources to students about to graduate, and provides a mechanism that guarantees these students complete the final assessments required to maintain the currency and quality of the program. It is intended for undergraduate computer science majors in their last semester prior to graduation. It is required for all students entering after the spring 2004 semester.  All degree requirements should be completed by the end of the semester during which this course is taken. Students taking this course will be expected to file an application for graduation during the semester.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "17983?",
+                        "Type": "LEC",
+                        "Enrolled": "28",
+                        "Class Max": "35",
+                        "Seats Available": "7",
+                        "Credit Hours": "0",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "TBA",
+                        "Days": "TBA",
+                        "Location": "To Be Announced",
+                        "Instructor": "Harvey Pe Siy"
+                    }
+                }
+            },
+            "4150": {
+                "number": "4150",
+                "title": "GRAPH THEORY & APPLICATIONS",
+                "desc": "Introduction to graph theory. Representations of graphs and graph isomorphism. Trees as a special case of graphs. Connectivity, covering, matching and coloring in graphs. Directed graphs and planar graphs. Applications of graph theory in several fields such as networks, social sciences, VLSI, chemistry and parallel processing.  Cross-listed with CSCI8156, MATH4150, MATH8156.",
+                "prereq": "Prereq: MATH 2030.",
+                "sections": {
+                    "001": {
+                        "Class Number": "17984?",
+                        "Type": "LEC",
+                        "Enrolled": "16",
+                        "Class Max": "25",
+                        "Seats Available": "9",
+                        "Credit Hours": "3",
+                        "Note": "Crosslisted course available in another department.",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "4:00PM - 5:15PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 256",
+                        "Instructor": "Hesham Hassan Ali"
+                    }
+                }
+            },
+            "4220": {
+                "number": "4220",
+                "title": "PRINC OF PROGRAMMING LANGUAGES",
+                "desc": "This course covers the foundational concepts and principles underlying the design and implementation of programming languages. Language constructs including assignment, equality, references, aggregations, scope, encapsulation, and parameter passing are discussed. A central theme is how a particular language construct relates to the concept of equational reasoning (referential transparency).  Formal notations for describing syntax and semantics are presented.",
+                "prereq": "Prereq: CSCI 3320-Data structures and algorithms; CSCI 3660-Introduction to the Theory of Computation.",
+                "sections": {
+                    "001": {
+                        "Class Number": "17985?",
+                        "Type": "LEC",
+                        "Enrolled": "29",
+                        "Class Max": "25",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "4:00PM - 5:15PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 274",
+                        "Instructor": "Victor L Winter"
+                    }
+                }
+            },
+            "4260": {
+                "number": "4260",
+                "title": "USER INTERFACE DSGN & DEVL",
+                "desc": "Graphical user interface (GUI) design is concerned with the application of user-centered design principles to graphical computer interfaces. Topics include user-centered design, establishing usability criteria and measures, usability testing, psychology of the user, rapid prototyping, iterative design and design tools. This course is an extension and application of its prerequisite, Human Computer Interaction.  Cross-listed with CSCI8266.",
+                "prereq": "Prereq: CSCI 4250 or instructor's permission. CSCI 4830, Knowledge of object-oriented programming concepts, Visual programming language.",
+                "sections": {
+                    "001": {
+                        "Class Number": "20852?",
+                        "Type": "LEC",
+                        "Enrolled": "11",
+                        "Class Max": "25",
+                        "Seats Available": "14",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "10:30AM - 11:45AM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 256",
+                        "Instructor": "Brian J Dorn"
+                    }
+                }
+            },
+            "4310": {
+                "number": "4310",
+                "title": "PROBABILISTIC OPS RSCH MODELS",
+                "desc": "This is a survey course of probabilistic operations, research models and algorithms. Topics include Markov chains, queueing theory, inventory models, forecasting, and simulation.  Cross-listed with CSCI8316, MATH4310 and MATH8316.",
+                "prereq": "Prereq: MATH2050",
+                "sections": {
+                    "001": {
+                        "Class Number": "17986?",
+                        "Type": "LEC",
+                        "Enrolled": "3",
+                        "Class Max": "10",
+                        "Seats Available": "7",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "4:00PM - 5:15PM",
+                        "Days": "MW",
+                        "Location": "Durham Science Center 164",
+                        "Instructor": "Vyacheslav V Rykov"
+                    }
+                }
+            },
+            "4350": {
+                "number": "4350",
+                "title": "COMPUTER ARCHITECTURE",
+                "desc": "The course deals with: processor design different instruction set architectures; memory hierarchy; input output organization and communication; and an introduction to parallel architecture. Analytic study of design alternatives for each of the above topics will be covered. The course is designed primarily for third year students in Computer Science.  Cross-listed with CSCI8356.",
+                "prereq": "Prereq: CSCI3710 and CSCI3320; or CSCI2730 and CSCI3320.",
+                "sections": {
+                    "001": {
+                        "Class Number": "17987?",
+                        "Type": "LEC",
+                        "Enrolled": "27",
+                        "Class Max": "25",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "12:00PM - 1:15PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 261",
+                        "Instructor": "M H Azadmanesh"
+                    }
+                }
+            },
+            "4460": {
+                "number": "4460",
+                "title": "NATURAL LANGUAGE UNDERSTANDING",
+                "desc": "The course will provide overview of the topics in natural language processing: computational syntax, semantics, and pragmatics, as well as the topics in knowledge representation and reasoning, tasks of semantic parsing and semantic role labeling. We will discuss natural language processing tools and systems used in practice as well as survey state-of-the-art linguistics knowledge bases that either boost the development of modern language processing and understanding applications or came to existence thanks to advances in this field.",
+                "prereq": "Prereq: CSCI 3320 Data structures.  Students planning to enroll in this course should be comfortable with scripting (preferably Python as this is the language extensively used in natural language processing tools including NLTK that will be used in a course).",
+                "sections": {
+                    "001": {
+                        "Class Number": "21037?",
+                        "Type": "LEC",
+                        "Enrolled": "6",
+                        "Class Max": "25",
+                        "Seats Available": "19",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "10:30AM - 11:45AM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 155",
+                        "Instructor": "Yuliya Lierler"
+                    }
+                }
+            },
+            "4500": {
+                "number": "4500",
+                "title": "OPERATING SYSTEMS",
+                "desc": "Operating system principles. The operating system as a resource manager; I/O programming, interrupt programming and machine architecture as it relates to resource management; memory management techniques for uni-multiprogrammed systems; process description and implementation; processor management (scheduling); I/O device, controller, and channel management; file systems. Operating system implementation for large and small machines.  Cross-listed with CSCI8506.",
+                "prereq": "Prereq: CSCI3710, CSCI3320, MATH1950 and CSCI4350, or CSCI2730, CSCI3320, MATH1950 and CSCI4350.",
+                "sections": {
+                    "001": {
+                        "Class Number": "17988?",
+                        "Type": "LEC",
+                        "Enrolled": "30",
+                        "Class Max": "27",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 261",
+                        "Instructor": "Stanley Wileman"
+                    }
+                }
+            },
+            "4560": {
+                "number": "4560",
+                "title": "NUMBER THEORY & CRYPTOGRAPHY",
+                "desc": "This course covers topics in number theory and secure communication. From number theory: Factorization of Integers, Congruence Arithmetic, Primitive Roots, and Quadratic Residues and Reciprocity. In the area of secure communication: Hashing Functions, Character, Block Ciphers and their Cryptananlysis, Symmetric Key and Public-Key Cryptosystems.  Cross-listed with CSCI8566, MATH4560, MATH8566.",
+                "prereq": "Prereq: MATH2230 or 2030",
+                "sections": {
+                    "001": {
+                        "Class Number": "17990?",
+                        "Type": "LEC",
+                        "Enrolled": "5",
+                        "Class Max": "5",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "5:30PM - 6:45PM",
+                        "Days": "MW",
+                        "Location": "Durham Science Center 164",
+                        "Instructor": "Vyacheslav V Rykov"
+                    }
+                }
+            },
+            "4620": {
+                "number": "4620",
+                "title": "COMPUTER GRAPHICS",
+                "desc": "An introduction to the acquisition, manipulation and display of graphical information using digital techniques. Topics include discussion of the various hardware devices used for input and output, the classical algorithms and data structures used in manipulation of graphical objects, the user interface to the graphics system, and applicable standards.  Cross-listed with CSCI8626.",
+                "prereq": "Prereq: ISQA3300 or CSCI3320",
+                "sections": {
+                    "001": {
+                        "Class Number": "17991?",
+                        "Type": "LEC",
+                        "Enrolled": "20",
+                        "Class Max": "25",
+                        "Seats Available": "5",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "12:00PM - 1:15PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 161",
+                        "Instructor": "Stanley Wileman"
+                    }
+                }
+            },
+            "4830": {
+                "number": "4830",
+                "title": "INTRODUCTN SOFTWARE ENGINEERNG",
+                "desc": "Basic concepts and major issues of software engineering, current tools and techniques providing a basis for analyzing, designing, developing, maintaining and evaluating the system. Technical, administrative and operating issues. Privacy, security and legal issues.  Cross-listed with CSCI8836.",
+                "prereq": "Prereq: CSCI3320.",
+                "sections": {
+                    "001": {
+                        "Class Number": "17992?",
+                        "Type": "LEC",
+                        "Enrolled": "25",
+                        "Class Max": "25",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "12:00PM - 1:15PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 270",
+                        "Instructor": "Harvey Pe Siy"
+                    }
+                }
+            },
+            "4850": {
+                "number": "4850",
+                "title": "DATABASE MANAGEMENT SYSTEMS",
+                "desc": "Basic concepts of data base management systems (DBMSs). The relational, hierarchical and network models and DBMSs which use them. Introduction to data base design.  Cross-listed with CSCI8856.",
+                "prereq": "Prereq: CSCI 3320",
+                "sections": {
+                    "001": {
+                        "Class Number": "17993?",
+                        "Type": "LEC",
+                        "Enrolled": "18",
+                        "Class Max": "25",
+                        "Seats Available": "7",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 252",
+                        "Instructor": "Parvathi Chundi"
+                    }
+                }
+            },
+            "4900": {
+                "number": "4900",
+                "title": "INTERNET SYSTEMS DEVELOPMENT",
+                "desc": "This course focuses on contemporary techniques and technologies in the design, development, and integration of web-enabled information systems.  This is a rapidly moving, hands-on course that mirrors real-world development of internet-based applications.",
+                "prereq": "Prereq: CSCI 1620, CSCI 2850, (recommended) CSCI 3830, CSCI 4830,",
+                "sections": {
+                    "001": {
+                        "Class Number": "19763?",
+                        "Type": "LEC",
+                        "Enrolled": "13",
+                        "Class Max": "15",
+                        "Seats Available": "2",
+                        "Credit Hours": "3",
+                        "Note": "Cross-listed with ISQA 4900",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "3:00PM - 4:15PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 270",
+                        "Instructor": "Raymond M Germonprez"
+                    }
+                }
+            },
+            "4950": {
+                "number": "4950",
+                "title": "INTERNSHIP IN COMPUTER SCIENCE",
+                "desc": "The purpose of this course is to provide students with opportunities to apply their academic studies in non-academic environments such as those found in business, industry and other non-academic organizations. The student interns will sharpen their academic focus and develop better understanding of non-academic application areas. The course is intended primarily for juniors and seniors in computer science.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "17995?",
+                        "Type": "LEC",
+                        "Enrolled": "13",
+                        "Class Max": "25",
+                        "Seats Available": "12",
+                        "Credit Hours": "1-3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "TBA",
+                        "Days": "TBA",
+                        "Location": "To Be Announced",
+                        "Instructor": "Harvey Pe Siy"
+                    },
+                    "098": {
+                        "Class Number": "17994?",
+                        "Type": "LEC",
+                        "Enrolled": "0",
+                        "Class Max": "5",
+                        "Seats Available": "5",
+                        "Credit Hours": "1-3",
+                        "Course Attribute": "Honors Program Students Only",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "TBA",
+                        "Days": "TBA",
+                        "Location": "To Be Announced",
+                        "Instructor": "Harvey Pe Siy"
+                    }
+                }
+            },
+            "4970": {
+                "number": "4970",
+                "title": "CAPSTONE PROJECT",
+                "desc": "The Capstone Project completes a Computer Science student\u00bfs undergraduate experience. Students will work on a team-based real-world project, practicing software engineering skills and applying fundamental computer science principles acquired throughout their undergraduate study.",
+                "prereq": "Prereq: CSCI 4830 (Introduction to Software Engineering). Senior standing in Computer Science. Permission of Instructor. Not open to nondegree students.",
+                "sections": {
+                    "001": {
+                        "Class Number": "19585?",
+                        "Type": "PRA",
+                        "Enrolled": "31",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "5:30PM - 6:45PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 263",
+                        "Instructor": "Harvey Pe Siy"
+                    }
+                }
+            },
+            "4990": {
+                "number": "4990",
+                "title": "INDEPENDENT STUDIES",
+                "desc": "A variable credit course for the junior or senior who will benefit from independent reading assignments and research type problems. Independent study makes available courses of study not available in scheduled course offerings. The student wishing to take an independent study course should find a faculty member willing to supervise the course and then submit, for approval, a written proposal (including amount of credit) to the Computer Science Undergraduate Program Committee at least three weeks prior to registration.",
+                "prereq": "Prereq: Written permission required.",
+                "sections": {
+                    "001": {
+                        "Class Number": "17996?",
+                        "Type": "IND",
+                        "Enrolled": "2",
+                        "Class Max": "25",
+                        "Seats Available": "23",
+                        "Credit Hours": "1-3",
+                        "Note": "Permission needed",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "TBA",
+                        "Days": "TBA",
+                        "Location": "To Be Announced",
+                        "Instructor": "Harvey Pe Siy"
+                    }
+                }
+            },
+            "8080": {
+                "number": "8080",
+                "title": "DSGN & ANALYSIS OF ALGORITHMS",
+                "desc": "The study of algorithms important in computer programming. Principles and underlying concepts of algorithm design, fundamental techniques of algorithm analysis, typical types of algorithms and computer architecture.  Cross-listed with MATH8080.",
+                "prereq": "Prereq: CSCI 3320/8325 or equivalent. Not open to nondegree students.",
+                "sections": {
+                    "001": {
+                        "Class Number": "17997?",
+                        "Type": "LEC",
+                        "Enrolled": "26",
+                        "Class Max": "25",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "5:30PM - 6:45PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 260",
+                        "Instructor": "Parvathi Chundi"
+                    }
+                }
+            },
+            "8105": {
+                "number": "8105",
+                "title": "APPLIED COMBINATORICS",
+                "desc": "Basic counting methods, generating functions, recurrence relations, principle of inclusion-exclusion. Polya's formula. Elements of graph theory, trees and searching network algorithms.  Cross-listed with MATH8105.",
+                "prereq": "Prereq: MATH 2030 or 2040 or 2230",
+                "sections": {
+                    "001": {
+                        "Class Number": "17998?",
+                        "Type": "LEC",
+                        "Enrolled": "0",
+                        "Class Max": "5",
+                        "Seats Available": "5",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "4:00PM - 5:15PM",
+                        "Days": "MW",
+                        "Location": "Durham Science Center 256",
+                        "Instructor": "John Konvalina"
+                    }
+                }
+            },
+            "8150": {
+                "number": "8150",
+                "title": "ADVANCED COMPUTER ARCHITECTURE",
+                "desc": "Various parallel architectures, models of parallel computation, processor arrays, multiprocessor systems, pipelined and vector processors, dataflow computers and systolic array structures.",
+                "prereq": "Prereq: Not open to nondegree students.",
+                "sections": {
+                    "001": {
+                        "Class Number": "19765?",
+                        "Type": "LEC",
+                        "Enrolled": "32",
+                        "Class Max": "31",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "4:00PM - 5:15PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 153",
+                        "Instructor": "Sanjukta Bhowmick"
+                    }
+                }
+            },
+            "8156": {
+                "number": "8156",
+                "title": "GRAPH THEORY & APPLICATIONS",
+                "desc": "Introduction to graph theory. Representations of graphs and graph isomorphism. Trees as a special case of graphs. Connectivity, covering, matching and coloring in graphs. Directed graphs and planar graphs. Applications of graph theory in several fields such as networks, social sciences, VLSI, chemistry and parallel processing.  Cross-listed with CSCI4150, MATH4150, MATH8156.",
+                "prereq": "Prereq: MATH 2030.",
+                "sections": {
+                    "001": {
+                        "Class Number": "17999?",
+                        "Type": "LEC",
+                        "Enrolled": "7",
+                        "Class Max": "10",
+                        "Seats Available": "3",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "4:00PM - 5:15PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 256",
+                        "Instructor": "Hesham Hassan Ali"
+                    }
+                }
+            },
+            "8266": {
+                "number": "8266",
+                "title": "USER INTERFACE DSGN & DEVL",
+                "desc": "Graphical user interface (GUI) design is concerned with the application of user-centered design principles to graphical computer interfaces.   Topics covered include user-centered design, establishing usability criteria and measures, usability testing, psychology of the user, rapid prototyping, iterative design, and design tools.  This course is an extension and application of its prerequisite, Human-Computer Interaction. Cross-listed with CSCI4260.",
+                "prereq": "Prereq: CSCI 4250 or instructor's permission and CSCI 4830. C++ or demonstrated fluency in any visual programming language is preferred.",
+                "sections": {
+                    "001": {
+                        "Class Number": "20854?",
+                        "Type": "LEC",
+                        "Enrolled": "0",
+                        "Class Max": "10",
+                        "Seats Available": "10",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "10:30AM - 11:45AM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 256",
+                        "Instructor": "Brian J Dorn"
+                    }
+                }
+            },
+            "8305": {
+                "number": "8305",
+                "title": "NUMERICAL METHODS",
+                "desc": "This course involves solving equations and systems of equations, interpolation, numerical differentiation and integration, numerical solutions to ordinary differential equations, numerical calculations of eigenvalues and eigenvectors, analysis of algorithms and errors, computational efficiency.  Cross-listed with CSCI 3300, MATH 3300, MATH 8305.",
+                "prereq": "Prereq: MATH 1960, MATH 2050, and MATH 2350",
+                "sections": {
+                    "001": {
+                        "Class Number": "19563?",
+                        "Type": "LEC",
+                        "Enrolled": "0",
+                        "Class Max": "5",
+                        "Seats Available": "5",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "4:00PM - 5:15PM",
+                        "Days": "MW",
+                        "Location": "Durham Science Center 304",
+                        "Instructor": "Mahboub Baccouch"
+                    }
+                }
+            },
+            "8316": {
+                "number": "8316",
+                "title": "PROBABILISTIC OPS RSCH MODELS",
+                "desc": "This is a survey course of probabilistic operations, research models and algorithms. Topics include Markov chains, queueing theory, inventory models, forecasting, and simulation.  Cross-listed with MATH8316.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "18000?",
+                        "Type": "LEC",
+                        "Enrolled": "1",
+                        "Class Max": "5",
+                        "Seats Available": "4",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "4:00PM - 5:15PM",
+                        "Days": "MW",
+                        "Location": "Durham Science Center 164",
+                        "Instructor": "Vyacheslav V Rykov"
+                    }
+                }
+            },
+            "8325": {
+                "number": "8325",
+                "title": "DATA STRUCTURES",
+                "desc": "This is a core that will cover a number of data structures such as tree, hashing, priority queues and graphs as well as different algorithm design methods by examining  common problem-solving techniques.  Cross-listed with CSCI3320.",
+                "prereq": "Prereq: CSCI 1620 and CSCI 2030 or MATH 2030. Programming Languages: Java or C++ Topics: Arrays, Pointers, Introductory Lists, Storage Allocation",
+                "sections": {
+                    "001": {
+                        "Class Number": "18001?",
+                        "Type": "LEC",
+                        "Enrolled": "1",
+                        "Class Max": "5",
+                        "Seats Available": "4",
+                        "Credit Hours": "3",
+                        "Note": "This course may not be used on a MS on the CSCI plan of study and will not count toward degree.",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 274",
+                        "Instructor": "Jong-Hoon Youn"
+                    }
+                }
+            },
+            "8350": {
+                "number": "8350",
+                "title": "DATA WAREHOUSING & DATA MINING",
+                "desc": "Covers topics related to decision support queries. In particular, topics covered include building data warehouses, On-Line Analysis Processing (OLAP), maintenance of materialized views, indexing, various data mining techniques, and integration of OLAP and data mining.",
+                "prereq": "Prereq: CSCI8856; bachelors degree and permission from Graduate Committee. Not open to nondegree students.",
+                "sections": {
+                    "001": {
+                        "Class Number": "21807?",
+                        "Type": "LEC",
+                        "Enrolled": "32",
+                        "Class Max": "40",
+                        "Seats Available": "8",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "7:00PM - 8:15PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 256",
+                        "Instructor": "Zhengxin Chen"
+                    },
+                    "002": {
+                        "Class Number": "25240?",
+                        "Type": "LEC",
+                        "Enrolled": "26",
+                        "Class Max": "20",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "9:00AM - 11:45AM",
+                        "Days": "F",
+                        "Location": "Peter Kiewit Institute 256",
+                        "Instructor": "Zhengxin Chen"
+                    }
+                }
+            },
+            "8366": {
+                "number": "8366",
+                "title": "FOUNDATIONS OF IA",
+                "desc": "Contemporary issues in computer security, including sources for computer security threats and appropriate reactions; basic encryption and decryption; secure encryption systems; program security, trusted operating systems; database security, network and distributed systems security, administering security; legal and ethical issues. (Cross-listed with IASC 4360, IASC 8366)",
+                "prereq": "Prereq: CSCI 3320/8325 OR ISQA 3300 OR By instructor permission",
+                "sections": {
+                    "001": {
+                        "Class Number": "19564?",
+                        "Type": "LEC",
+                        "Enrolled": "5",
+                        "Class Max": "10",
+                        "Seats Available": "5",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "5:30PM - 8:10PM",
+                        "Days": "T",
+                        "Location": "Peter Kiewit Institute 164",
+                        "Instructor": "Robin A Gandhi"
+                    },
+                    "002": {
+                        "Class Number": "19586?",
+                        "Type": "LAB",
+                        "Enrolled": "5",
+                        "Class Max": "10",
+                        "Seats Available": "5",
+                        "Topic": "Laboratory",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "3:00PM - 5:15PM",
+                        "Days": "R",
+                        "Location": "Peter Kiewit Institute 361",
+                        "Instructor": "Robin A Gandhi"
+                    }
+                }
+            },
+            "8410": {
+                "number": "8410",
+                "title": "DISTRIB SYSTEM & NETWORK SEC",
+                "desc": "The course aims at understanding the issues surrounding data security, integrity, confidentiality and availability in distributed systems. Further, we will discuss various network security issues, threats that exist and strategies to mitigate them. This course will cover topics in cryptography, public key infrastructure, authentication, hashing, digital signatures, ARP protection, IP and IPSEC, IP Tables, SSL/TLS, firewalls, etc. (Cross-listed with IASC 8410)",
+                "prereq": "Prereq: CSCI 8366 or equivalent(s). Not open to nondegree graduate students.",
+                "sections": {
+                    "001": {
+                        "Class Number": "19418?",
+                        "Type": "LEC",
+                        "Enrolled": "3",
+                        "Class Max": "25",
+                        "Seats Available": "22",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "5:30PM - 6:45PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 261",
+                        "Instructor": "Abhishek Parakh"
+                    }
+                }
+            },
+            "8420": {
+                "number": "8420",
+                "title": "SOFTWARE ASSURANCE",
+                "desc": "Software assurance is a reasoned, auditable argument created to support the belief that the software will operate as expected. This course is an intersection of knowledge areas necessary to perform engineering activities or aspects of activities relevant for promoting software assurance. This course takes on a software development lifecycle perspective for the prevention of flaws. (Cross-listed with IASC 8420)",
+                "prereq": "Prereq: CSCI 8366 or equivalent; or permission of instructor. Not open to nondegree students.",
+                "sections": {
+                    "001": {
+                        "Class Number": "18002?",
+                        "Type": "LEC",
+                        "Enrolled": "2",
+                        "Class Max": "25",
+                        "Seats Available": "23",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "3:00PM - 5:15PM",
+                        "Days": "W",
+                        "Location": "Peter Kiewit Institute 157",
+                        "Instructor": "Robin A Gandhi"
+                    }
+                }
+            },
+            "8506": {
+                "number": "8506",
+                "title": "OPERATING SYSTEMS",
+                "desc": "Operating System principles. The operating system as a resource manager; I/O programming, interrupt programming and machine architecture as it relates to resource management; memory management techniques for uni-multiprogrammed systems; process description and implementation; processor management (scheduling); I/O device, controller and channel management; file systems. Operating system implementation for large and small machines.  Cross-listed with CSCI4500.",
+                "prereq": "Prereq: CSCI 2620, 3320, MATH 1950. Recommended: CSCI 4350. Not open to nondegree students.",
+                "sections": {
+                    "001": {
+                        "Class Number": "18003?",
+                        "Type": "LEC",
+                        "Enrolled": "9",
+                        "Class Max": "8",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 261",
+                        "Instructor": "Stanley Wileman"
+                    }
+                }
+            },
+            "8555": {
+                "number": "8555",
+                "title": "COMMUNICATION NETWORKS",
+                "desc": "This course is designed to bring students up to the state of the art in networking technologies with a focus on Internet. It will cover the principles of networking with an emphasis on protocols, implementations and design issues.  Cross-listed with CSCI3550.",
+                "prereq": "Prereq: CSCI 3320/8325. Data structures and algorithms. C or C++ programming.",
+                "sections": {
+                    "001": {
+                        "Class Number": "18004?",
+                        "Type": "LEC",
+                        "Enrolled": "2",
+                        "Class Max": "5",
+                        "Seats Available": "3",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "4:00PM - 5:15PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 263",
+                        "Instructor": "M H Azadmanesh"
+                    }
+                }
+            },
+            "8566": {
+                "number": "8566",
+                "title": "NUMBER THEORY & CRYPTOGRAPHY",
+                "desc": "From number theory: Factorization of Integers, Congruence Arithmetic, Primitive Roots, and Quadratic Residues and Reciprocity. In the area of secure communication: Hashing Functions, Character, Block and Stream Ciphers and the Cryptanalysis. Symmetric Key Cryptosystems such as DES, and also Public-Key Cryptosystems such as RSA and EIGamal. Also Diffie-Hellman Key Exchange, Digital Signatures, Secret Sharing, and Zero-Knowledge Proofs.  Cross-listed with CSCI4560, MATH4560, MATH8566.",
+                "prereq": "Prereq: MATH 2230 or MATH 2030. Not open to nondegree students.",
+                "sections": {
+                    "001": {
+                        "Class Number": "18005?",
+                        "Type": "LEC",
+                        "Enrolled": "1",
+                        "Class Max": "5",
+                        "Seats Available": "4",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "5:30PM - 6:45PM",
+                        "Days": "MW",
+                        "Location": "Durham Science Center 164",
+                        "Instructor": "Vyacheslav V Rykov"
+                    }
+                }
+            },
+            "8610": {
+                "number": "8610",
+                "title": "FAULT TOLERANT DIST SYSTEMS",
+                "desc": "This course is to study the theory and practice of designing computer systems in the presence of faulty components. Emphasizes the basics of how faults can affect systems and what is required to mask or compensate for their efforts.",
+                "prereq": "Prereq: CSCI 4500 and CSCI 4350. Not open to nondegree students.",
+                "sections": {
+                    "001": {
+                        "Class Number": "21809?",
+                        "Type": "LEC",
+                        "Enrolled": "15",
+                        "Class Max": "25",
+                        "Seats Available": "10",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "5:30PM - 8:10PM",
+                        "Days": "M",
+                        "Location": "Peter Kiewit Institute 256",
+                        "Instructor": "M H Azadmanesh"
+                    }
+                }
+            },
+            "8626": {
+                "number": "8626",
+                "title": "COMPUTER GRAPHICS",
+                "desc": "An introduction to the acquisition, manipulation and display of graphical information using digital techniques. Topics include discussion of the various hardware devices used for input and output, the classical algorithms and data structures used in manipulation of graphical objects, the user interface to the graphics system, and applicable standards.  Cross-listed with CSCI4620.",
+                "prereq": "Prereq: MATH 2050 and CSCI 3320/8325. Not open to nondegree students.",
+                "sections": {
+                    "001": {
+                        "Class Number": "18006?",
+                        "Type": "LEC",
+                        "Enrolled": "6",
+                        "Class Max": "10",
+                        "Seats Available": "4",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "12:00PM - 1:15PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 161",
+                        "Instructor": "Stanley Wileman"
+                    }
+                }
+            },
+            "8700": {
+                "number": "8700",
+                "title": "SOFTWARE SPECIFIC & DESIGN",
+                "desc": "A continuation of the study of software engineering with an emphasis on early phases of software development, namely requirements engineering/specification and design. Fundamentals of quality software design. In-depth study of various software requirements specification and design techniques. Related topics such as metrics and CASE tools.",
+                "prereq": "Prereq: 4830/8836 Introduction to Software Engineering. Not open to nondegree students.",
+                "sections": {
+                    "001": {
+                        "Class Number": "22733?",
+                        "Type": "LEC",
+                        "Enrolled": "21",
+                        "Class Max": "20",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "7:00PM - 8:15PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 274",
+                        "Instructor": "Harvey Pe Siy"
+                    }
+                }
+            },
+            "8836": {
+                "number": "8836",
+                "title": "INTRODUCTN SOFTWARE ENGINEERNG",
+                "desc": "Basic concepts and major issues of software engineering, current tools and techniques providing a basis for analyzing, designing, developing, maintaining and evaluating the system. Technical, administrative and operating issues. Privacy, security and legal issues.  Cross-listed with CSCI4830.",
+                "prereq": "Prereq: CSCI 3320/8325. Not open to nondegree students.",
+                "sections": {
+                    "001": {
+                        "Class Number": "18007?",
+                        "Type": "LEC",
+                        "Enrolled": "1",
+                        "Class Max": "10",
+                        "Seats Available": "9",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "12:00PM - 1:15PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 270",
+                        "Instructor": "Harvey Pe Siy"
+                    }
+                }
+            },
+            "8856": {
+                "number": "8856",
+                "title": "DATABASE MANAGEMENT SYSTEMS",
+                "desc": "Basic concepts of data base management systems (DBMSs). The relational, hierarchical and network models and DBMSs which use them. Introduction to data base design.  Cross-listed with CSCI4850.",
+                "prereq": "Prereq: CSCI 3320/8325. Not open to nondegree students.",
+                "sections": {
+                    "001": {
+                        "Class Number": "18008?",
+                        "Type": "LEC",
+                        "Enrolled": "15",
+                        "Class Max": "10",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 252",
+                        "Instructor": "Parvathi Chundi"
+                    }
+                }
+            },
+            "8876": {
+                "number": "8876",
+                "title": "DB SEARCH/PATTERN DIS BIOINFO",
+                "desc": "The course provides students basic knowledge on database aspects related to bioinformatics. In order to make this course self-contained, it starts with a brief introduction on key concepts in computational molecular biology, as well as a review of database management systems, artificial intelligence and related aspects in computer science. The major part of this course will cover various issues related to biodatabase search and pattern discovery.  Cross-listed with BIOI4870.",
+                "prereq": "Prereq: CSCI3320. Not open to nondegree students.",
+                "sections": {
+                    "001": {
+                        "Class Number": "19767?",
+                        "Type": "LEC",
+                        "Enrolled": "11",
+                        "Class Max": "15",
+                        "Seats Available": "4",
+                        "Credit Hours": "3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "5:30PM - 6:45PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 157",
+                        "Instructor": "Zhengxin Chen"
+                    }
+                }
+            },
+            "8910": {
+                "number": "8910",
+                "title": "MASTER OF SCIENCE CAPSTONE",
+                "desc": "The capstone course is to integrate coursework, knowledge, skills and experimental learning to enable the student to demonstrate a broad mastery of knowledge, skills, and techniques across the Master degree curriculum of Computer Science for a promise of initial employability and further career advancement. The course is designed to be in a student-centered and student-directed manner which requires the command, analysis and synthesis of knowledge and skills. Students may apply their knowledge and skill to a project which serves as an instrument of evaluation. Students are encouraged to foster an interdisciplinary research and cultivate industry alliances and cooperation in this course.  This capstone course should be taken only after students have completed at least 3/4 of course requirements for the major.",
+                "prereq": "Prereq: Master's degree of Computer Science with course-only option (program III). Not open to nondegree students.",
+                "sections": {
+                    "860": {
+                        "Class Number": "25008?",
+                        "Type": "SEM",
+                        "Enrolled": "9",
+                        "Class Max": "25",
+                        "Seats Available": "16",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Partially Online",
+                        "Note": "Class meetings: January 12, 5:30 - 6:30 PM; March 2 and May 4, 5:30 - 8:30 PM",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "TBA",
+                        "Days": "TBA",
+                        "Location": "Partially Online",
+                        "Instructor": "Qiuming Zhu"
+                    }
+                }
+            },
+            "8950": {
+                "number": "8950",
+                "title": "GRADUATE INTERNSHIP COMP SCI",
+                "desc": "The purpose of this course is to provide students with opportunities to apply their academic studies in environments such as those found in business, industry, and other non-academic organizations. The student interns will sharpen their academic focus and develop better understanding of non-academic application areas.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "19594?",
+                        "Type": "FLD",
+                        "Enrolled": "12",
+                        "Class Max": "25",
+                        "Seats Available": "13",
+                        "Credit Hours": "1-3",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "TBA",
+                        "Days": "TBA",
+                        "Location": "To Be Announced",
+                        "Instructor": "Jong-Hoon Youn"
+                    }
+                }
+            },
+            "8960": {
+                "number": "8960",
+                "title": "THESIS EQUIVALENT PROJECT CSCI",
+                "desc": "This course allows a graduate student to conduct a research project in computer science or a related area. The project is expected to place an emphasis on applied, implementations-based, or experimental research. The process for development and approval of the project must include: appointment of supervisory committee (chaired by project adviser), a proposal approved by the supervisory committee, monitoring of the project by the supervisory committee, an oral examination over the completed written product conducted by the supervisory committee, & final approval by the supervisory committee. The approved written project will be submitted to the Office of Graduate Studies by the advertised deadlines.",
+                "prereq": "Prereq: Permission of Graduate Adviser. Not open to nondegree students.",
+                "sections": {
+                    "001": {
+                        "Class Number": "18009?",
+                        "Type": "LEC",
+                        "Enrolled": "8",
+                        "Class Max": "25",
+                        "Seats Available": "17",
+                        "Credit Hours": "1-6",
+                        "Note": "Permission needed from Advisor",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "TBA",
+                        "Days": "TBA",
+                        "Location": "To Be Announced",
+                        "Instructor": "Jong-Hoon Youn"
+                    }
+                }
+            },
+            "8970": {
+                "number": "8970",
+                "title": "INDEPENDENT STUDY",
+                "desc": "Under this number a graduate student may pursue studies in an area that is not normally available in a formal course. The topics to be studied will be in a graduate area of computer science to be determined by the instructor.",
+                "prereq": "Prereq: Permission of the Graduate Program Committee. Not open to nondegree students.",
+                "sections": {
+                    "001": {
+                        "Class Number": "18010?",
+                        "Type": "LEC",
+                        "Enrolled": "7",
+                        "Class Max": "25",
+                        "Seats Available": "18",
+                        "Credit Hours": "1-3",
+                        "Note": "Permission needed from Graduate Program Committee Chair",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "TBA",
+                        "Days": "TBA",
+                        "Location": "To Be Announced",
+                        "Instructor": "Jong-Hoon Youn"
+                    }
+                }
+            },
+            "8990": {
+                "number": "8990",
+                "title": "THESIS",
+                "desc": "A research project, designed and executed under the supervision of the chair and approval by members of the graduate student's thesis advisory committee. In this project the student will develop and perfect a number of skills including the ability to design, conduct, analyze and report the results in writing (i.e., thesis) of an original, independent scientific investigation.",
+                "prereq": "Prereq: Permission of Graduate Adviser. Not open to nondegree students",
+                "sections": {
+                    "001": {
+                        "Class Number": "18011?",
+                        "Type": "IND",
+                        "Enrolled": "4",
+                        "Class Max": "25",
+                        "Seats Available": "21",
+                        "Credit Hours": "1-6",
+                        "Note": "Permission needed from Advisor",
+                        "Date": "Jan 12, 2015 - May 08, 2015",
+                        "Time": "TBA",
+                        "Days": "TBA",
+                        "Location": "To Be Announced",
+                        "Instructor": "Jong-Hoon Youn"
+                    }
+                }
+            }
+        }
+    }
+}
