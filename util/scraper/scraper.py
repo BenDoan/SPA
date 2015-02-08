@@ -13,7 +13,11 @@ Options:
 """
 
 import json
-import collections
+import itertools
+
+from collections import OrderedDict
+from multiprocessing import Pool
+from multiprocessing import cpu_count
 
 import requests
 import logging
@@ -32,19 +36,32 @@ with open("data/terms.json") as f:
     terms = json.loads(f.readline())
 
 
+def get_college_data_one(college_term):
+    """this function calls get_college_data, but
+    only has one argument so that it can be called with pool.map
+
+    To call use: pool.map(get_college_data_one, zip(colleges, itertools.repeat(terms)))
+    """
+    return get_college_data(*college_term)
+
 def get_college_data(college, term):
+    """Returns a dictionary containing all classes within college and term"""
+    logging.info("Processing college {}".format(college))
+
     page = requests.get("{}?term={}&session=&subject={}&catalog_nbr=&career=&instructor=&class_start_time=&class_end_time=&location=&special=&instruction_mode=".format(BASE_URL, term,  college))
     soup = BeautifulSoup(page.text)
 
-    classes = collections.OrderedDict()
+    classes = OrderedDict()
+
+    #loop through each class in the college
     for dotted in soup.findAll("div", {'class': 'dotted-bottom'}):
-        cls = collections.OrderedDict()
+        cls = OrderedDict()
 
         number = dotted.find("h2")
         if number:
-            cls['number'] = number.text.split(" ")[-1]
+            class_number = number.text.split(" ")[-1]
         else:
-            cls['number'] = "-"
+            class_number = "-"
 
         title = dotted.find("p")
         if title:
@@ -63,11 +80,12 @@ def get_college_data(college, term):
         else:
             cls['prereq'] = "-"
 
-        sections = collections.OrderedDict()
+        sections = OrderedDict()
         tables = dotted.findAll("table")
         if tables:
+            # loop through each section in the class
             for table in tables:
-                section = collections.OrderedDict()
+                section = OrderedDict()
                 rows = table.findAll("tr")
                 for tr in rows:
                     tds = tr.findAll("td")
@@ -81,8 +99,8 @@ def get_college_data(college, term):
 
         cls['sections'] = sections
 
-        if 'number' in cls and cls['number'] != "-":
-            classes[cls['number']] = cls
+        if class_number != "-":
+            classes[class_number] = cls
 
     return classes
 
@@ -90,6 +108,7 @@ def get_college_data(college, term):
 def main():
     args = docopt(__doc__, version="1")
 
+    # process arguments
     if args['--college'] is not None:
         global colleges
         colleges = [args['--college']]
@@ -104,16 +123,15 @@ def main():
         logging.basicConfig(level=logging.WARNING)
 
 
-    term_data = collections.OrderedDict()
+    pool = Pool(cpu_count()*2)
+    term_data = OrderedDict()
     for term in terms:
-        logging.info("Processing {}".format(term))
-        college_data = collections.OrderedDict()
-        for college in colleges:
-            logging.info("Processing {}".format(college))
-            college_data[college] = get_college_data(college, term)
+        logging.info("Processing term {}".format(term))
 
-        term_data[term] = college_data
+        results = pool.map(get_college_data_one, zip(colleges, itertools.repeat(term)))
+        term_data[term] = OrderedDict(zip(colleges, results))
 
+    # output class data as json
     json_data = json.dumps(term_data, sort_keys=False, indent=4, separators=(',', ': '))
     if args['--output'] is not None:
         with open(args['--output'], 'w') as f:

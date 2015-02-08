@@ -25,3 +25,5 @@ source env/bin/activate
 python scraper.py -l -c CSCI > csci_data.json
 python scraper.py -l -c CSCI -o file.json
 ```
+
+note: with my internet connection, the script takes about ~~30 minutes~~ 5 minutes (when run in parallel on 4 cores) to run for all terms and colleges
