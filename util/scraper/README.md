@@ -7,7 +7,7 @@ virtualenv --no-site-packages -p /usr/bin/python2 env
 ```
 source env/bin/activate
 ```
- -- run `deactivate` to exit the virtualenv
+run `deactivate` to exit the virtualenv
 1. Install the dependencies with pip:
 ```
 pip install -r requirements.txt
