@@ -35,16 +35,7 @@ terms = [1151]
 with open("data/terms.json") as f:
     terms = json.loads(f.readline())
 
-
-def get_college_data_one(college_term):
-    """this function calls get_college_data, but
-    only has one argument so that it can be called with pool.map
-
-    To call use: pool.map(get_college_data_one, zip(colleges, itertools.repeat(terms)))
-    """
-    return get_college_data(*college_term)
-
-def get_college_data(college, term):
+def get_college_data((college, term)):
     """Returns a dictionary containing all classes within college and term"""
     logging.info("Processing college {}".format(college))
 
@@ -128,7 +119,7 @@ def main():
     for term in terms:
         logging.info("Processing term {}".format(term))
 
-        results = pool.map(get_college_data_one, zip(colleges, itertools.repeat(term)))
+        results = pool.map(get_college_data, zip(colleges, itertools.repeat(term)), 2)
         term_data[term] = OrderedDict(zip(colleges, results))
 
     # output class data as json
