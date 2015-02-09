@@ -16,8 +16,7 @@ import json
 import itertools
 
 from collections import OrderedDict
-from multiprocessing import Pool
-from multiprocessing import cpu_count
+from multiprocessing import Pool, cpu_count
 
 import requests
 import logging
@@ -95,8 +94,21 @@ def get_college_data((college, term)):
 
     return classes
 
+def get_full_term_listing():
+    """Returns a dictionary containing the uno classes
+    for every listed term and college"""
+    pool = Pool(cpu_count()*2)
 
-def main():
+    term_data = OrderedDict()
+    for term in terms:
+        logging.info("Processing term {}".format(term))
+
+        results = pool.map(get_college_data, zip(colleges, itertools.repeat(term)), 2)
+        term_data[term] = OrderedDict(zip(colleges, results))
+    return term_data
+
+
+def _main():
     args = docopt(__doc__, version="1")
 
     # process arguments
@@ -113,14 +125,7 @@ def main():
     else:
         logging.basicConfig(level=logging.WARNING)
 
-
-    pool = Pool(cpu_count()*2)
-    term_data = OrderedDict()
-    for term in terms:
-        logging.info("Processing term {}".format(term))
-
-        results = pool.map(get_college_data, zip(colleges, itertools.repeat(term)), 2)
-        term_data[term] = OrderedDict(zip(colleges, results))
+    term_data = get_full_term_listing()
 
     # output class data as json
     json_data = json.dumps(term_data, sort_keys=False, indent=4, separators=(',', ': '))
@@ -131,4 +136,4 @@ def main():
         print json_data
 
 if __name__ == "__main__":
-    main()
+    _main()
