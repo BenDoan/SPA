@@ -44,7 +44,10 @@ def get_college_data((college, term)):
     classes = OrderedDict()
 
     #loop through each class in the college
-    for dotted in soup.findAll("div", {'class': 'dotted-bottom'}):
+    classes = soup.findAll("div", {'class': 'dotted-bottom'})
+    if len(classes) == 0:
+        logging.error("No classes for college {}, term {}".format(college, term))
+    for dotted in classes:
         cls = OrderedDict()
 
         number = dotted.find("h2")
