@@ -9,6 +9,7 @@ Options:
     -o FILE, --output FILE          Specifies output file
     -c COLLEGE, --college COLLEGE   Specifies a specific college
     -l, --last-term-only            Only ouputs the last term
+    -u URL, --url URL               Specify an alternate class-search url
     -v, --verbose                   Turns on verbose logging
 """
 
@@ -24,13 +25,13 @@ import logging
 from docopt import docopt
 from BeautifulSoup import BeautifulSoup
 
-BASE_URL = "http://www.unomaha.edu/class-search/"
+BASE_URL = "http://www.unomaha.edu/registrar/students/before-you-enroll/class-search/"
 
 colleges = ["CSCI"]
 with open("data/colleges.json") as f:
     colleges = json.loads(f.readline())
 
-terms = [1151]
+terms = [1155]
 with open("data/terms.json") as f:
     terms = json.loads(f.readline())
 
@@ -43,11 +44,11 @@ def get_college_data((college, term)):
 
     classes = OrderedDict()
 
-    #loop through each class in the college
-    classes = soup.findAll("div", {'class': 'dotted-bottom'})
-    if len(classes) == 0:
+    if len(soup.findAll("div", {'class': 'dotted-bottom'})) == 0:
         logging.error("No classes for college {}, term {}".format(college, term))
-    for dotted in classes:
+
+    #loop through each class in the college
+    for dotted in soup.findAll("div", {'class': 'dotted-bottom'}):
         cls = OrderedDict()
 
         number = dotted.find("h2")
@@ -106,7 +107,7 @@ def get_full_term_listing():
     for term in terms:
         logging.info("Processing term {}".format(term))
 
-        results = pool.map(get_college_data, zip(colleges, itertools.repeat(term)), 2)
+        results = pool.map(get_college_data, zip(colleges, itertools.repeat(term)))
         term_data[term] = OrderedDict(zip(colleges, results))
     return term_data
 
@@ -122,6 +123,10 @@ def _main():
     if args['--last-term-only']:
         global terms
         terms = [terms[-1]]
+
+    if args['--url']:
+        global URL
+        URL = args['--url']
 
     if args['--verbose']:
         logging.basicConfig(level=logging.INFO)
