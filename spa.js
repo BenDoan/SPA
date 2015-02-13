@@ -1,3 +1,11 @@
+Router.route('/', function () {
+  this.render('index');
+});
+
+Router.route('/make', function () {
+  this.render('make');
+});
+
 if (Meteor.isClient) {
   // counter starts at 0
   Session.setDefault("counter", 0);
