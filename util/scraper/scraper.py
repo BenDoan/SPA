@@ -27,10 +27,6 @@ from BeautifulSoup import BeautifulSoup
 
 BASE_URL = "http://www.unomaha.edu/registrar/students/before-you-enroll/class-search/"
 
-colleges = ["CSCI"]
-with open("data/colleges.json") as f:
-    colleges = json.loads(f.readline())
-
 terms = [1155]
 with open("data/terms.json") as f:
     terms = json.loads(f.readline())
@@ -42,11 +38,10 @@ def get_college_data((college, term)):
     page = requests.get("{}?term={}&session=&subject={}&catalog_nbr=&career=&instructor=&class_start_time=&class_end_time=&location=&special=&instruction_mode=".format(BASE_URL, term,  college))
     soup = BeautifulSoup(page.text)
 
-    classes = OrderedDict()
-
     if len(soup.findAll("div", {'class': 'dotted-bottom'})) == 0:
         logging.error("No classes for college {}, term {}".format(college, term))
 
+    classes = OrderedDict()
     #loop through each class in the college
     for dotted in soup.findAll("div", {'class': 'dotted-bottom'}):
         cls = OrderedDict()
@@ -98,7 +93,7 @@ def get_college_data((college, term)):
 
     return classes
 
-def get_full_term_listing():
+def get_full_term_listing(college=None):
     """Returns a dictionary containing the uno classes
     for every listed term and college"""
     pool = Pool(cpu_count()*2)
@@ -107,18 +102,23 @@ def get_full_term_listing():
     for term in terms:
         logging.info("Processing term {}".format(term))
 
+        if college is None:
+            colleges = get_colleges(term)
+        else:
+            colleges = [college]
+
         results = pool.map(get_college_data, zip(colleges, itertools.repeat(term)))
         term_data[term] = OrderedDict(zip(colleges, results))
     return term_data
-
 
 def _main():
     args = docopt(__doc__, version="1")
 
     # process arguments
-    if args['--college'] is not None:
-        global colleges
-        colleges = [args['--college']]
+    if args['--college']:
+        college = args['--college']
+    else:
+        college = None
 
     if args['--last-term-only']:
         global terms
@@ -133,7 +133,7 @@ def _main():
     else:
         logging.basicConfig(level=logging.WARNING)
 
-    term_data = get_full_term_listing()
+    term_data = get_full_term_listing(college)
 
     # output class data as json
     json_data = json.dumps(term_data, sort_keys=False, indent=4, separators=(',', ': '))
@@ -142,6 +142,9 @@ def _main():
             f.write(json_data)
     else:
         print json_data
+
+def get_colleges(term):
+    return [x['value'] for x in requests.get("{}subjects.load.php?term={}".format(BASE_URL, term)).json()]
 
 if __name__ == "__main__":
     _main()
