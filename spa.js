@@ -6,6 +6,8 @@ Router.route('/make', function () {
   this.render('make');
 });
 
+Schedules = new Mongo.Collection("schedules");
+
 if (Meteor.isClient) {
   // counter starts at 0
   Session.setDefault("counter", 0);
