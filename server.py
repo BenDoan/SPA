@@ -137,11 +137,6 @@ def index():
     return render_template('index.html')
 
 @login_required
-@app.route('/rooms', methods=['GET'])
-def rooms():
-    return render_template('rooms.html')
-
-@login_required
 @app.route('/profile', methods=['GET'])
 def profile():
     return render_template('profile.html')
