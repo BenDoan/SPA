@@ -1,5 +1,4 @@
-# CosmicAC
-Web application for guiding prospective students through the PKI open house.
+# Student Plan Application
 
 ## setup
 ```bash
