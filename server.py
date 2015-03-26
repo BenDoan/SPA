@@ -49,8 +49,8 @@ class AddRoomForm(Form):
     long_description = TextAreaField('long_description', validators=[DataRequired()])
     image = TextField('image', validators=[DataRequired()])
 
-def create_user(username, email, password, is_admin):
-    newuser = model.User(username,email, is_admin=is_admin)
+def create_user(username, email, password):
+    newuser = model.User(username,email)
     newuser.password = pbkdf2_sha256.encrypt(password)
     db.session.add(newuser)
     db.session.commit()
@@ -142,26 +142,12 @@ def profile():
     return render_template('profile.html')
 
 @login_required
-@app.route('/admin', methods=['GET'])
-def admin():
-    if current_user.is_admin:
-        return render_template('admin.html', form=AddRoomForm())
-
-@login_required
 @app.route('/classSelector',methods=['GET'])
 def class_selector():
     courses=model.Course.query.all()
     return render_template('classSelector.html',courses=courses)
 
-
 ##Actions
-@login_required
-@app.route('/user/add', methods=['POST'])
-def add_user():
-    if current_user.is_admin:
-        print request.form
-        admin()
-    #return render_template('admin.html', form=AddRoomForm())
 
 ##Misc
 @login_required

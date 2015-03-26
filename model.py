@@ -13,16 +13,14 @@ class Model():
             email = db.Column(db.String(120), unique=True)
             password = db.Column(db.String)
             authenticated = db.Column(db.Boolean())
-            is_admin = db.Column(db.Boolean())
 
-            def __init__(self, username, email, is_admin=False):
+            def __init__(self, username, email):
                 self.username = username
                 self.email = email
                 self.authenticated = False
-                self.is_admin = is_admin
 
             def __str__(self):
-                return "User: {}".format((self.id, self.username, self.email, self.password, self.authenticated, self.is_admin))
+                return "User: {}".format((self.id, self.username, self.email, self.password, self.authenticated))
 
             def is_authenticated(self) :
                 return self.authenticated
