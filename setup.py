@@ -7,8 +7,8 @@ def main():
     db.drop_all()
     db.create_all()
 
-    create_user('admin', 'admin@example.com', 'password', is_admin=True)
-    create_user('user', 'user@example.com', 'password', is_admin=False)
+    create_user('admin', 'admin@example.com', 'password')
+    create_user('user', 'user@example.com', 'password')
 
     insert_class_data('util/scraper/uno_class_data.json')
 
