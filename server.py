@@ -163,6 +163,7 @@ def add_user():
 def get_static(remainder):
     return send_from_directory(app.static_folder,request.path[1:])
 
+
 app.secret_key = "Secret"
 
 if __name__ == "__main__":
