@@ -1,5 +1,6 @@
 from server import db, create_user, model
 
+import csv
 import json
 import os
 
@@ -11,6 +12,7 @@ def main():
     create_user('user', 'user@example.com', 'password')
 
     insert_class_data('data/uno_class_data.json')
+    insert_requirements_data('data/ist_requirements')
 
 def insert_class_data(path):
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)), path)
@@ -28,6 +30,33 @@ def insert_class_data(path):
 
                 db.session.add(nc)
                 db.session.commit()
+
+def insert_requirements_data(path):
+    for root, _, files in os.walk(path):
+        for f in files:
+            if f.lower().endswith('.csv'):
+                ingest_requirements_csv(os.path.join(root, f))
+
+def ingest_requirements_csv(csv_file):
+    reader = csv.reader(open(csv_file, 'r'), delimiter=',')
+
+    requirement = next(reader)
+    new_req = model.Requirement(requirement[0], requirement[1])
+    db.session.add(new_req)
+
+    for rule in reader:
+        if '|' in rule[0]:
+            continue
+        course_college, course_number = rule[0].split()
+        #print rule[0].split()
+
+        course = model.Course.query.filter_by(college=course_college, number=course_number).first()
+        if not course:
+            print "Couldn't find course for {} {}".format(course_college, course_number)
+            continue
+        new_class_req = model.ClassRequirement(new_req, course)
+
+    db.session.commit()
 
 if __name__ == '__main__':
     main()

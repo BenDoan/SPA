@@ -1,4 +1,5 @@
 from flask.ext.sqlalchemy import SQLAlchemy
+from sqlalchemy.schema import UniqueConstraint
 
 class Model():
     def __init__(self, app):
@@ -10,7 +11,7 @@ class Model():
 
             id = db.Column(db.Integer, primary_key=True)
             username = db.Column(db.String(80), unique=True)
-            email = db.Column(db.String(120), unique=True)
+            email = db.Column(db.String(120))
             password = db.Column(db.String)
             authenticated = db.Column(db.Boolean())
 
@@ -37,13 +38,14 @@ class Model():
 
         class Course(self.db.Model):
             __tablename__ = 'courses'
+            __table_args__ = (UniqueConstraint('college', 'number'),)
 
             id = db.Column(db.Integer, primary_key=True)
-            number = db.Column(db.Integer)
-            title = db.Column(db.String)
-            desc = db.Column(db.String)
+            number = db.Column(db.Integer, nullable=False)
+            title = db.Column(db.String, nullable=False)
+            desc = db.Column(db.String, nullable=False)
             prereqs = db.Column(db.String)
-            college = db.Column(db.String)
+            college = db.Column(db.String, nullable=False)
 
             def __init__(self, number="", title="", desc="", prereqs=""):
                 self.number  = number
@@ -56,8 +58,8 @@ class Model():
             __tablename__ = 'requirements'
 
             id = db.Column(db.Integer, primary_key=True)
-            name = db.Column(db.String)
-            credits = db.Column(db.Integer)
+            name = db.Column(db.String, unique=True)
+            credits = db.Column(db.Integer, nullable=False)
 
             def __init__(self, name, credits):
                 self.name = name
@@ -68,10 +70,10 @@ class Model():
             __tablename__ = 'class_requirements'
             id = db.Column(db.Integer, primary_key=True)
 
-            requirement_id = db.Column(db.Integer, db.ForeignKey('requirements.id'))
+            requirement_id = db.Column(db.Integer, db.ForeignKey('requirements.id'), nullable=False)
             requirement = db.relationship('Requirement', backref=db.backref('ClassRequirement', lazy='dynamic'))
 
-            course_id = db.Column(db.Integer, db.ForeignKey('courses.id'))
+            course_id = db.Column(db.Integer, db.ForeignKey('courses.id'), nullable=False)
             course = db.relationship('Course', backref=db.backref('ClassRequirement', lazy='dynamic'))
 
             def __init__(self, requirement, course):
