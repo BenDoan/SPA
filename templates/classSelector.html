@@ -7,108 +7,67 @@
 {% endif %}
 <div class="jumbotron">
     <div class="container">
+	<!--TODO: Sort them so they are displayed in numerical order, probably need to be done server side
+		Add functionality so the cut off is 4-5 rows of classes and the rest are searchable in some manner
+	 -->
+<!--Starts loop to add classes
+	Hold onto your hats... this gets kind of hairy...
+-->
+	{% set courseBefore='startVal' %}
+	{% set counter=0 %}
+	{% set rowCounter=0 %}
+	{% set ROW_MAX=4 %}
+	{% for course in courses %}
+		{% if courseBefore == 'startVal' %}
 	<div class='blockClass'>
-	<table class='table'>
-		<thead class='ovrClass'>
-			<th>
-				<button type="button" onclick='buttonClicked(this)'>test</button>
-			</th>
-		</thead>
-		<tbody class='indClass'>
+        <table class='table'>
+                <thead class='ovrClass'>
+                        <th>
+                                <button type="button" onclick='buttonClicked(this)'>{{course.college}}</button>
+                        </th>
+                </thead>
+                <tbody class='indClass'>
+                        <tr>
+		{% endif %}
+
+		{% if courseBefore != course.college and courseBefore != 'startVal' %}
+			{% set rowCounter=0 %}
+			</tr>
+                </tbody>
+        </table>
+        </div>
+ 
+	<div class='blockClass'>
+        <table class='table'>
+                <thead class='ovrClass'>
+                        <th>
+                                <button type="button" onclick='buttonClicked(this)'>{{course.college}}</button>
+                        </th>
+                </thead>
+                <tbody class='indClass'>
 			<tr>
-				<td><button type="button" onclick='buttonClicked(this)'>one</button></td>
-				<td><button type="button" onclick='buttonClicked(this)'>two</button></td>
-				<td><button type="button" onclick='buttonClicked(this)'>three</button></td>
-				<td><button type="button" onclick='buttonClicked(this)'>four</button></td>
+			{% set counter=0 %}
+		{% endif %}
+		{% if counter==4 %}
+			{% if rowCounter != ROW_MAX %}
+				{% set rowCounter=rowCounter+1 %}
+
 			</tr>
 			<tr>
-                                <td><button type="button" onclick='buttonClicked(this)'>one</button></td>
-                                <td><button type="button" onclick='buttonClicked(this)'>two</button></td>
-                                <td><button type="button" onclick='buttonClicked(this)'>three</button></td>
-				<td><button type="button" onclick='buttonClicked(this)'>four</button></td>
-                        </tr>
-			<tr>
-                                <td><button type="button" onclick='buttonClicked(this)'>one</button></td>
-                                <td><button type="button" onclick='buttonClicked(this)'>two</button></td>
-                                <td><button type="button" onclick='buttonClicked(this)'>three</button></td>
-				<td><button type="button" onclick='buttonClicked(this)'>four</button></td>
-                        </tr>
-
-		</tbody>
-	</table>
-	</div>
-
-	<div class='blockClass'>
-        <table class='table'>
-                <thead class='ovrClass'>
-                        <th>
-                                <button type="button" onclick='buttonClicked(this)'>test</button>
-                        </th>
-                </thead>
-                <tbody class='indClass'>
-                        <tr>
-                                <td><button type="button" onclick='buttonClicked(this)'>one</button></td>
-                                <td><button type="button" onclick='buttonClicked(this)'>two</button></td>
-                                <td><button type="button" onclick='buttonClicked(this)'>three</button></td>
-				<td><button type="button" onclick='buttonClicked(this)'>four</button></td>
-                        </tr>
-                </tbody>
-        </table>	
-        </div>
-
-        <div class='blockClass'>
-        <table class='table'>
-                <thead class='ovrClass'>
-                        <th>
-                                <button type="button">test</button>
-                        </th>
-                </thead>
-                <tbody class='indClass'>
-                        <tr>
-                                <td><button>one</button></td>
-                                <td><button>two</button></td>
-                                <td><button>three</button></td>
-				<td><button>four</button></td>
-                        </tr>
-
-			<tr>
-                                <td><button>one</button></td>
-                                <td><button>two</button></td>
-                                <td><button>three</button></td>
-				<td><button>four</button></td>
-                        </tr>
-
+			{% endif %}
+			{% set counter=0 %}	
+		{% endif %}
+		{% if rowCounter != ROW_MAX %}
+				<td><button type="button" onclick='buttonClicked(this)'>{{course.number}}</button></td>
+		{% endif %}
+		{% set counter=counter+1 %}
+		{% set courseBefore=course.college %}
+	{% endfor %}
+			 </tr>
                 </tbody>
         </table>
         </div>
-
-	<div class='blockClass'>
-        <table class='table'>
-                <thead class='ovrClass'>
-                        <th>
-                                <button type="button">test</button>
-                        </th>
-                </thead>
-                <tbody class='indClass'>
-                        <tr>
-                                <td><button>one</button></td>
-                                <td><button>two</button></td>
-                                <td><button>three</button></td>
-				<td><button>four</button></td>
-                        </tr>
-
-                        <tr>
-                                <td><button>one</button></td>
-                                <td><button>two</button></td>
-                                <td><button>three</button></td>
-				<td><button>four</button></td>
-                        </tr>
-
-                </tbody>
-        </table>
-        </div>
-	
-	
+<!--Ends out the loop for the classes-->
 
     </div>
 </div>

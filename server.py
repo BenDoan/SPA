@@ -150,7 +150,8 @@ def admin():
 @login_required
 @app.route('/classSelector',methods=['GET'])
 def class_selector():
-    return render_template('classSelector.html')
+    courses=model.Course.query.all()
+    return render_template('classSelector.html',courses=courses)
 
 
 ##Actions

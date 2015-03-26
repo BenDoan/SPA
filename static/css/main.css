@@ -69,12 +69,16 @@ img.lichen {
 	border-style:solid;
 	border-color:lightgray;
 	border-width:thin;
-	width:232px;
-	height:200px;
+	width:218px;
+	height:210px;
 }
 
 .ovrClass tr th button{
 	width:100%;
+}
+
+.indClass tr td{
+	padding:3px!important;
 }
 
 .activeButton {
