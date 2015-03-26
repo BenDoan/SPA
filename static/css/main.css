@@ -58,3 +58,26 @@ div.logincontainer {
 img.lichen {
     width:10%;
 }
+
+.indClass {
+        float:left;
+}
+
+.blockClass {
+        float:left;
+	margin:4px;
+	border-style:solid;
+	border-color:lightgray;
+	border-width:thin;
+	width:232px;
+	height:200px;
+}
+
+.ovrClass tr th button{
+	width:100%;
+}
+
+.activeButton {
+	background-color:green;
+	border-color:black;
+}

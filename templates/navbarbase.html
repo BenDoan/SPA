@@ -17,6 +17,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li {% if request.path == "/" %}class="active"{% endif %}><a href="/">Home <span class="sr-only">(current)</span></a></li>
+                <li {% if request.path == "/classSelector" %}class="active"{% endif %}><a href="/classSelector">Class Select</a></li>
                 <li {% if request.path.startswith("/profile") %}class="active"{% endif %}><a href="/profile">Profile</a></li>
                 {% if current_user.is_admin %}<li {% if request.path.startswith("/admin") %}class="active"{% endif %}><a href="/admin">Admin</a></li>{% endif %}
             </ul>
