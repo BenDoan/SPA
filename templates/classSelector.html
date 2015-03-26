@@ -1,0 +1,135 @@
+{% extends "navbarbase.html" %}
+{% block navcontent %}
+{% if alert_type == "success" %}
+    <div class="alert alert-success" role="alert">{{ alert }}</div>
+{% elif alert_type == "failure" %}
+    <div class="alert alert-danger" role="alert">{{ alert }}</div>
+{% endif %}
+<div class="jumbotron">
+    <div class="container">
+	<div class='blockClass'>
+	<table class='table'>
+		<thead class='ovrClass'>
+			<th>
+				<button type="button" onclick='buttonClicked(this)'>test</button>
+			</th>
+		</thead>
+		<tbody class='indClass'>
+			<tr>
+				<td><button type="button" onclick='buttonClicked(this)'>one</button></td>
+				<td><button type="button" onclick='buttonClicked(this)'>two</button></td>
+				<td><button type="button" onclick='buttonClicked(this)'>three</button></td>
+				<td><button type="button" onclick='buttonClicked(this)'>four</button></td>
+			</tr>
+			<tr>
+                                <td><button type="button" onclick='buttonClicked(this)'>one</button></td>
+                                <td><button type="button" onclick='buttonClicked(this)'>two</button></td>
+                                <td><button type="button" onclick='buttonClicked(this)'>three</button></td>
+				<td><button type="button" onclick='buttonClicked(this)'>four</button></td>
+                        </tr>
+			<tr>
+                                <td><button type="button" onclick='buttonClicked(this)'>one</button></td>
+                                <td><button type="button" onclick='buttonClicked(this)'>two</button></td>
+                                <td><button type="button" onclick='buttonClicked(this)'>three</button></td>
+				<td><button type="button" onclick='buttonClicked(this)'>four</button></td>
+                        </tr>
+
+		</tbody>
+	</table>
+	</div>
+
+	<div class='blockClass'>
+        <table class='table'>
+                <thead class='ovrClass'>
+                        <th>
+                                <button type="button" onclick='buttonClicked(this)'>test</button>
+                        </th>
+                </thead>
+                <tbody class='indClass'>
+                        <tr>
+                                <td><button type="button" onclick='buttonClicked(this)'>one</button></td>
+                                <td><button type="button" onclick='buttonClicked(this)'>two</button></td>
+                                <td><button type="button" onclick='buttonClicked(this)'>three</button></td>
+				<td><button type="button" onclick='buttonClicked(this)'>four</button></td>
+                        </tr>
+                </tbody>
+        </table>	
+        </div>
+
+        <div class='blockClass'>
+        <table class='table'>
+                <thead class='ovrClass'>
+                        <th>
+                                <button type="button">test</button>
+                        </th>
+                </thead>
+                <tbody class='indClass'>
+                        <tr>
+                                <td><button>one</button></td>
+                                <td><button>two</button></td>
+                                <td><button>three</button></td>
+				<td><button>four</button></td>
+                        </tr>
+
+			<tr>
+                                <td><button>one</button></td>
+                                <td><button>two</button></td>
+                                <td><button>three</button></td>
+				<td><button>four</button></td>
+                        </tr>
+
+                </tbody>
+        </table>
+        </div>
+
+	<div class='blockClass'>
+        <table class='table'>
+                <thead class='ovrClass'>
+                        <th>
+                                <button type="button">test</button>
+                        </th>
+                </thead>
+                <tbody class='indClass'>
+                        <tr>
+                                <td><button>one</button></td>
+                                <td><button>two</button></td>
+                                <td><button>three</button></td>
+				<td><button>four</button></td>
+                        </tr>
+
+                        <tr>
+                                <td><button>one</button></td>
+                                <td><button>two</button></td>
+                                <td><button>three</button></td>
+				<td><button>four</button></td>
+                        </tr>
+
+                </tbody>
+        </table>
+        </div>
+	
+	
+
+    </div>
+</div>
+
+<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+    </div>
+</div>
+
+<script type='text/javascript'>
+	function buttonClicked(element)
+	{	
+		if(element.className=='activeButton')
+		{
+			element.classList.remove('activeButton');
+		}
+		else
+		{
+			element.classList.add("activeButton");
+		}
+	}
+</script>
+{% endblock %}
