@@ -10,7 +10,7 @@ def main():
     create_user('admin', 'admin@example.com', 'password')
     create_user('user', 'user@example.com', 'password')
 
-    insert_class_data('util/scraper/uno_class_data.json')
+    insert_class_data('data/uno_class_data.json')
 
 def insert_class_data(path):
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)), path)
