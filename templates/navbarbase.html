@@ -19,7 +19,6 @@
                 <li {% if request.path == "/" %}class="active"{% endif %}><a href="/">Home <span class="sr-only">(current)</span></a></li>
                 <li {% if request.path == "/classSelector" %}class="active"{% endif %}><a href="/classSelector">Class Select</a></li>
                 <li {% if request.path.startswith("/profile") %}class="active"{% endif %}><a href="/profile">Profile</a></li>
-                {% if current_user.is_admin %}<li {% if request.path.startswith("/admin") %}class="active"{% endif %}><a href="/admin">Admin</a></li>{% endif %}
             </ul>
             <span class="navbar-right">
                 <p class="navbar-text">You are logged in as <strong><a href="/profile">{{ current_user.username }}</strong></a></p>

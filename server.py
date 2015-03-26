@@ -142,25 +142,11 @@ def profile():
     return render_template('profile.html')
 
 @login_required
-@app.route('/admin', methods=['GET'])
-def admin():
-    if current_user.is_admin:
-        return render_template('admin.html', form=AddRoomForm())
-
-@login_required
 @app.route('/classSelector',methods=['GET'])
 def class_selector():
     return render_template('classSelector.html')
 
-
 ##Actions
-@login_required
-@app.route('/user/add', methods=['POST'])
-def add_user():
-    if current_user.is_admin:
-        print request.form
-        admin()
-    #return render_template('admin.html', form=AddRoomForm())
 
 ##Misc
 @login_required
