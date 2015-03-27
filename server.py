@@ -1,6 +1,7 @@
 from flask import *
 
 from flask.ext.sqlalchemy import SQLAlchemy
+from sqlalchemy import or_
 from flask.ext.assets import Environment, Bundle
 from htmlmin import minify
 from flask.ext.login import LoginManager,login_user,logout_user, current_user, login_required
@@ -8,6 +9,7 @@ from flask_wtf import Form
 from wtforms import StringField, PasswordField, TextField, TextAreaField
 from wtforms.validators import DataRequired
 from passlib.hash import pbkdf2_sha256
+from operator import itemgetter
 
 from model import Model
 
@@ -143,8 +145,39 @@ def profile():
 @login_required
 @app.route('/classSelector',methods=['GET'])
 def class_selector():
-    courses=model.Course.query.all()
-    return render_template('classSelector.html',courses=courses)
+    #courses=model.Course.query.all()
+    requirementNums=model.CourseRequirement.query.filter(model.CourseRequirement.requirement_id.in_([1,2,3,4,24,25,26,27,28,29,30,31])).all()
+    courses=[]
+    for x in requirementNums:
+        myCourse=[]
+        for x in model.Course.query.filter(model.Course.id == x.course_id):
+            myCourse.append(x)
+        for x in myCourse:
+            courses.append(x)
+    #courses=model.Course.query.filter(or_(model.Course.college=='ENGL'))
+    
+    #Sorting the colleges so that we dont have multiple different ones from requirements
+    sortedColleges = sorted(courses, key=itemgetter('college'))
+    #model.CourseRequirement.query(new) #breaks webpage for console testing
+
+    sortedCourses=[]
+    sortCollege=[]
+    prevCollege=""
+    for course in sortedColleges:
+        if course.college == prevCollege:#same college, just add and go
+            sortCollege.append(course)
+        elif prevCollege != "":#not equal and not the starting value
+            #sortedCourses = sortCollege
+            #break
+            y = sorted(sortCollege, key=itemgetter('number'))
+            for x in y:
+                sortedCourses.append(x)
+            sortCollege=[course]
+            prevCollege=course.college
+        else:#starting value so append and move on
+            prevCollege=course.college
+            sortCollege.append(course)
+    return render_template('classSelector.html',courses=sortedCourses)
 
 ##Actions
 

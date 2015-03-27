@@ -52,6 +52,13 @@ class Model():
                 self.title = title
                 self.desc = desc
                 self.prereqs = prereqs
+
+            def __getitem__(self, compare):#dirty hack to make sorting work...
+                if compare == 'number':
+                     return self.number
+                elif compare == 'college':
+                     return self.college
+
         self.Course = Course
 
         class Requirement(self.db.Model):
@@ -67,7 +74,7 @@ class Model():
         self.Requirement = Requirement
 
         class CourseRequirement(self.db.Model):
-            __tablename__ = 'course_requirements'
+            __tablename__ = 'class_requirements'
             id = db.Column(db.Integer, primary_key=True)
 
             requirement_id = db.Column(db.Integer, db.ForeignKey('requirements.id'), nullable=False)
