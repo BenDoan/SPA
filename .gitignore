@@ -57,3 +57,5 @@ static/*/gen
 static/.webassets-cache/
 
 .webassets-cache
+
+data/uno_class_data_all.json

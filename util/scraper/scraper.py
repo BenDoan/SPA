@@ -27,7 +27,7 @@ from BeautifulSoup import BeautifulSoup
 
 BASE_URL = "http://www.unomaha.edu/registrar/students/before-you-enroll/class-search/"
 
-terms = [1155]
+terms = [1158]
 with open("data/terms.json") as f:
     terms = json.loads(f.readline())
 

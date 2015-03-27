@@ -63,7 +63,6 @@ def load_user(userid):
 
 @app.route('/authenticate', methods=['GET','POST'])
 def authenticate():
-    print "Authenticating"
     form = LoginForm()
     if form.validate_on_submit():
         users = model.User.query.filter_by(username=request.form["name"])

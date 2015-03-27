@@ -66,20 +66,20 @@ class Model():
                 self.credits = credits
         self.Requirement = Requirement
 
-        class ClassRequirement(self.db.Model):
-            __tablename__ = 'class_requirements'
+        class CourseRequirement(self.db.Model):
+            __tablename__ = 'course_requirements'
             id = db.Column(db.Integer, primary_key=True)
 
             requirement_id = db.Column(db.Integer, db.ForeignKey('requirements.id'), nullable=False)
-            requirement = db.relationship('Requirement', backref=db.backref('ClassRequirement', lazy='dynamic'))
+            requirement = db.relationship('Requirement', backref=db.backref('CourseRequirement', lazy='dynamic'))
 
             course_id = db.Column(db.Integer, db.ForeignKey('courses.id'), nullable=False)
-            course = db.relationship('Course', backref=db.backref('ClassRequirement', lazy='dynamic'))
+            course = db.relationship('Course', backref=db.backref('CourseRequirement', lazy='dynamic'))
 
             def __init__(self, requirement, course):
                 self.requirement = requirement
                 self.course = course
-        self.ClassRequirement = ClassRequirement
+        self.CourseRequirement = CourseRequirement
 
         class UserHistory(self.db.Model):
             id = db.Column(db.Integer, primary_key=True)
