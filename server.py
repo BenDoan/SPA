@@ -145,21 +145,17 @@ def profile():
 @login_required
 @app.route('/classSelector',methods=['GET'])
 def class_selector():
-    #courses=model.Course.query.all()
+    #query just for CS
     requirementNums=model.CourseRequirement.query.filter(model.CourseRequirement.requirement_id.in_([1,2,3,4,24,25,26,27,28,29,30,31])).all()
-    courses=[]
-    for x in requirementNums:
-        myCourse=[]
-        for x in model.Course.query.filter(model.Course.id == x.course_id):
-            myCourse.append(x)
-        for x in myCourse:
-            courses.append(x)
-    #courses=model.Course.query.filter(or_(model.Course.college=='ENGL'))
+
+    #pulling in all classes for the requirement given
+    coursesToPull=[]
+    for courseReq in requirementNums:
+        coursesToPull.append(courseReq.course_id)
+    courses=model.Course.query.filter(model.Course.id.in_(coursesToPull)).all()
 
     #Sorting the colleges so that we dont have multiple different ones from requirements
     sortedColleges = sorted(courses, key=itemgetter('college'))
-    #model.CourseRequirement.query(new) #breaks webpage for console testing
-
     sortedCourses=[]
     sortCollege=[]
     prevCollege=""
@@ -167,8 +163,6 @@ def class_selector():
         if course.college == prevCollege:#same college, just add and go
             sortCollege.append(course)
         elif prevCollege != "":#not equal and not the starting value
-            #sortedCourses = sortCollege
-            #break
             y = sorted(sortCollege, key=itemgetter('number'))
             for x in y:
                 sortedCourses.append(x)
