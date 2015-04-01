@@ -1,3 +1,0 @@
-# requirements ingest
-- deal with | in classes
-- ingest classes not in current semester
