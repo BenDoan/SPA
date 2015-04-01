@@ -48,7 +48,6 @@ def insert_requirements_data(path):
     for major_name, major in requirements.items():
         for cat_name, cat in major.items():
             new_req = model.Requirement(cat_name, major_name, cat['credits'])
-            db.session.add(new_req)
             for cls in cat['classes']:
                 if '|' in cls['name']:
                     continue

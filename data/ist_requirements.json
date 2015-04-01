@@ -1,0 +1,568 @@
+{
+    "General University Requirements": {
+        "Public Speaking":
+        {
+            "credits": "3",
+            "classes": [
+                { "rating": 3, "name": "CMST 1110" },
+                { "rating": 3, "name": "CMST 2120" }
+            ]
+        },
+        "English Composition":
+        {
+            "credits": "9",
+            "classes": [
+                { "rating": 3, "name": "ENGL 1150" },
+                { "rating": 3, "name": "ENGL 1160" },
+                { "rating": 3, "name": "CIST 3000" }
+            ]
+        },
+        "Global Diversity":
+        {
+            "credits": "3",
+            "classes": [
+                { "rating": 3, "name": "ART 2040" },
+                { "rating": 3, "name": "ART 2050" },
+                { "rating": 3, "name": "ART 2060" },
+                { "rating": 3, "name": "CRCJ 4750" },
+                { "rating": 3, "name": "CRCJ 4760" },
+                { "rating": 3, "name": "ENGL 2470" },
+                { "rating": 3, "name": "ENGL 3290" },
+                { "rating": 3, "name": "FREN 1110" },
+                { "rating": 3, "name": "GEOG 1000" },
+                { "rating": 3, "name": "GEOG 1020" },
+                { "rating": 3, "name": "GERM 1110" },
+                { "rating": 3, "name": "HED 4650" },
+                { "rating": 3, "name": "HIST 1000" },
+                { "rating": 3, "name": "HIST 1010" },
+                { "rating": 3, "name": "HIST 2190" },
+                { "rating": 3, "name": "IASC 1100" },
+                { "rating": 3, "name": "INST 2130" },
+                { "rating": 3, "name": "ISQA 3420" },
+                { "rating": 3, "name": "JAPN 1110" },
+                { "rating": 3, "name": "LLS 1000" },
+                { "rating": 3, "name": "LLS 2800" },
+                { "rating": 3, "name": "LLS 2900" },
+                { "rating": 3, "name": "LLS 3680" },
+                { "rating": 3, "name": "MUS 1080" },
+                { "rating": 3, "name": "PHIL 2040" },
+                { "rating": 3, "name": "PSCI 1000" },
+                { "rating": 3, "name": "PSCI 2210" },
+                { "rating": 3, "name": "PSCI 2500" },
+                { "rating": 3, "name": "PSCI 3500" },
+                { "rating": 3, "name": "PSCI 3640" },
+                { "rating": 3, "name": "PSCI 3660" },
+                { "rating": 3, "name": "PSCI 3680" },
+                { "rating": 3, "name": "PSCI 3700" },
+                { "rating": 3, "name": "PSCI 4200" },
+                { "rating": 3, "name": "PSCI 4520" },
+                { "rating": 3, "name": "PSCI 4620" },
+                { "rating": 3, "name": "RELI 1010" },
+                { "rating": 3, "name": "RELI 2190" },
+                { "rating": 3, "name": "RUSS 1110" },
+                { "rating": 3, "name": "SOC 2190" },
+                { "rating": 3, "name": "SOC 3950" },
+                { "rating": 3, "name": "SOC 4250" },
+                { "rating": 3, "name": "SPAN 1110" },
+                { "rating": 3, "name": "SPCH 4570" }
+            ]
+        },
+        "Humanities":
+        {
+            "credits": "9",
+            "classes": [
+                { "rating": 3, "name": "ART 1010" },
+                { "rating": 3, "name": "ART 2040" },
+                { "rating": 3, "name": "ART 2050" },
+                { "rating": 3, "name": "ART 2060" },
+                { "rating": 3, "name": "BLST 2100" },
+                { "rating": 3, "name": "BLST 2260" },
+                { "rating": 3, "name": "BLST 2410" },
+                { "rating": 3, "name": "BLST 2420" },
+                { "rating": 3, "name": "BLST 2430" },
+                { "rating": 3, "name": "BRCT 1050" },
+                { "rating": 3, "name": "CIST 3110" },
+                { "rating": 3, "name": "ENGL 1010" },
+                { "rating": 3, "name": "ENGL 1020" },
+                { "rating": 3, "name": "ENGL 1200" },
+                { "rating": 3, "name": "ENGL 2110" },
+                { "rating": 3, "name": "ENGL 2230" },
+                { "rating": 3, "name": "ENGL 2250" },
+                { "rating": 3, "name": "ENGL 22560" },
+                { "rating": 3, "name": "ENGL 2310" },
+                { "rating": 3, "name": "ENGL 2320" },
+                { "rating": 3, "name": "ENGL 2450" },
+                { "rating": 3, "name": "ENGL 2460" },
+                { "rating": 3, "name": "ENGL 2470" },
+                { "rating": 3, "name": "ENGL 2490" },
+                { "rating": 3, "name": "ENGL 2500" },
+                { "rating": 3, "name": "ENGL 2510" },
+                { "rating": 3, "name": "ENGL 3130 " },
+                { "rating": 3, "name": "ENGL 3150" },
+                { "rating": 3, "name": "FREN 1110" },
+                { "rating": 3, "name": "GERM 1110" },
+                { "rating": 3, "name": "HIST 1000" },
+                { "rating": 3, "name": "HIST 1010" },
+                { "rating": 3, "name": "HIST 1110" },
+                { "rating": 3, "name": "HIST 1120" },
+                { "rating": 3, "name": "HIST 2190" },
+                { "rating": 3, "name": "HORT 2000" },
+                { "rating": 3, "name": "HUMN 1110" },
+                { "rating": 3, "name": "HUMN 1200" },
+                { "rating": 3, "name": "HUMN 1500" },
+                { "rating": 3, "name": "JAPN 1110" },
+                { "rating": 3, "name": "LLS 1020" },
+                { "rating": 3, "name": "LLS 2800" },
+                { "rating": 3, "name": "MUS 1050" },
+                { "rating": 3, "name": "MUS 1070" },
+                { "rating": 3, "name": "MUS 1080" },
+                { "rating": 3, "name": "MUS 1090" },
+                { "rating": 3, "name": "MUS 1100" },
+                { "rating": 3, "name": "MUS 2700" },
+                { "rating": 3, "name": "MUS 2760" },
+                { "rating": 3, "name": "NAMS 1100" },
+                { "rating": 3, "name": "PHIL 1010" },
+                { "rating": 3, "name": "PHIL 1020" },
+                { "rating": 3, "name": "PHIL 1210" },
+                { "rating": 3, "name": "PHIL 2030" },
+                { "rating": 3, "name": "PSCI 2310" },
+                { "rating": 3, "name": "RELI 1010 " },
+                { "rating": 3, "name": "RELI 2150" },
+                { "rating": 3, "name": "RELI 2190 " },
+                { "rating": 3, "name": "RUSS 1110" },
+                { "rating": 3, "name": "SOC 2190" },
+                { "rating": 3, "name": "SPAN 1110" },
+                { "rating": 3, "name": "THEA 1010" },
+                { "rating": 3, "name": "THEA 1050" },
+                { "rating": 3, "name": "THEA 1090" },
+                { "rating": 3, "name": "THEA 1210" },
+                { "rating": 3, "name": "THEA 2310" },
+                { "rating": 3, "name": "THEA 4050" },
+                { "rating": 3, "name": "WGST 2020" },
+                { "rating": 3, "name": "WRWS 1500" },
+                { "rating": 3, "name": "WRWS 2400" },
+                { "rating": 3, "name": "WRWS 3500" }
+            ]
+        },
+        "Social Sciences":
+        {
+            "credits": "9",
+            "classes": [
+                { "rating": 3, "name": "ACCT 2000" },
+                { "rating": 3, "name": "ANTH 1050" },
+                { "rating": 3, "name": "AVN 1000" },
+                { "rating": 3, "name": "AVN 2510" },
+                { "rating": 3, "name": "BLST 1000" },
+                { "rating": 3, "name": "BLST 1400" },
+                { "rating": 3, "name": "CRCJ 1010" },
+                { "rating": 3, "name": "CIST 2100" },
+                { "rating": 3, "name": "ECON 1200" },
+                { "rating": 3, "name": "ECON 2200" },
+                { "rating": 3, "name": "ECON 2220" },
+                { "rating": 3, "name": "EMGT 1000" },
+                { "rating": 3, "name": "ENGL 2280" },
+                { "rating": 3, "name": "ENGL 360" },
+                { "rating": 3, "name": "GDRH 2110" },
+                { "rating": 3, "name": "GDRH 2120" },
+                { "rating": 3, "name": "GEOG 100" },
+                { "rating": 3, "name": "GEOG 1020" },
+                { "rating": 3, "name": "GERO 2000" },
+                { "rating": 3, "name": "JOUR 1500" },
+                { "rating": 3, "name": "LLS 1000" },
+                { "rating": 3, "name": "LLS 1010" },
+                { "rating": 3, "name": "LLS 2900" },
+                { "rating": 3, "name": "PSCI 1000" },
+                { "rating": 3, "name": "PSCI 1100" },
+                { "rating": 3, "name": "PSCI 2120" },
+                { "rating": 3, "name": "PSCI 2180" },
+                { "rating": 3, "name": "PSCI 2210" },
+                { "rating": 3, "name": "PSCI 2500" },
+                { "rating": 3, "name": "PSCI 3140" },
+                { "rating": 3, "name": "PSYC 1010" },
+                { "rating": 3, "name": "SOC 1010" },
+                { "rating": 3, "name": "SOC 2100" },
+                { "rating": 3, "name": "SOC 2150" },
+                { "rating": 3, "name": "SOWK 1000" },
+                { "rating": 3, "name": "SPCH 1310" },
+                { "rating": 3, "name": "SPCH 2010" },
+                { "rating": 3, "name": "SPCH 2410" },
+                { "rating": 3, "name": "WGST 2010" }
+            ]
+        },
+        "Mathematics":
+        {
+            "credits": "3",
+            "classes": [
+                { "rating": 3, "name": "MATH 1310 " }
+            ]
+        },
+        "Natural and Physical Sciences":
+        {
+            "credits": "7",
+            "classes": [
+                { "rating": 3, "name": "ANTH 3910" },
+                { "rating": 3, "name": "BIOI 1000" },
+                { "rating": 3, "name": "BIOL 1020" },
+                { "rating": 3, "name": "BIOL 1330" },
+                { "rating": 3, "name": "BIOL 1450" },
+                { "rating": 3, "name": "CHEM 1010" },
+                { "rating": 3, "name": "CHEM 1014" },
+                { "rating": 3, "name": "CHEM 1140" },
+                { "rating": 3, "name": "CHEM 1144" },
+                { "rating": 3, "name": "CHEM 1180" },
+                { "rating": 3, "name": "CHEM 1184" },
+                { "rating": 3, "name": "CSCI 1200" },
+                { "rating": 3, "name": "CSCI 1204" },
+                { "rating": 3, "name": "FSCI 1310" },
+                { "rating": 3, "name": "FSMT 1600" },
+                { "rating": 3, "name": "GEOG 1030" },
+                { "rating": 3, "name": "GEOG 1060" },
+                { "rating": 3, "name": "GEOG 1070" },
+                { "rating": 3, "name": "GEOG 3510" },
+                { "rating": 3, "name": "GEOG 3514" },
+                { "rating": 3, "name": "GEOL 1010" },
+                { "rating": 3, "name": "GEOL 1100" },
+                { "rating": 3, "name": "GEOL 1104" },
+                { "rating": 3, "name": "GEOL 1170" },
+                { "rating": 3, "name": "GEOL 2100" },
+                { "rating": 3, "name": "GEOL 2500" },
+                { "rating": 3, "name": "HORT 1300" },
+                { "rating": 3, "name": "HORT 1310" },
+                { "rating": 3, "name": "HORT 2120" },
+                { "rating": 3, "name": "NSCI 1050" },
+                { "rating": 3, "name": "PE 2400" },
+                { "rating": 3, "name": "PHYS 1030" },
+                { "rating": 3, "name": "PHYS 1034" },
+                { "rating": 3, "name": "PHYS 1050" },
+                { "rating": 3, "name": "PHYS 1054" },
+                { "rating": 3, "name": "PHYS 1110" },
+                { "rating": 3, "name": "PHYS 1154" },
+                { "rating": 3, "name": "PHYS 1350" },
+                { "rating": 3, "name": "PHYS 1354" },
+                { "rating": 3, "name": "PHYS 2110" },
+                { "rating": 3, "name": "TED 1100" }
+            ]
+        },
+        "US Diversity":
+        {
+            "credits": "3",
+            "classes": [
+                { "rating": 3, "name": "ART 1010" },
+                { "rating": 3, "name": "AVN 2510" },
+                { "rating": 3, "name": "BLST 1000" },
+                { "rating": 3, "name": "BLST 1400" },
+                { "rating": 3, "name": "BLST 2100" },
+                { "rating": 3, "name": "BLST 2260" },
+                { "rating": 3, "name": "BLST 2410" },
+                { "rating": 3, "name": "BLST 2420" },
+                { "rating": 3, "name": "BLST 4580" },
+                { "rating": 3, "name": "CRCJ 3380" },
+                { "rating": 3, "name": "CRCJ 3390" },
+                { "rating": 3, "name": "EDUC 2030" },
+                { "rating": 3, "name": "ENGL 2230" },
+                { "rating": 3, "name": "ENGL 2260" },
+                { "rating": 3, "name": "ENGL 2280" },
+                { "rating": 3, "name": "ENGL 2490" },
+                { "rating": 3, "name": "ENGL 3610" },
+                { "rating": 3, "name": "GERO 2000" },
+                { "rating": 3, "name": "HED 4700" },
+                { "rating": 3, "name": "HUMN 1110" },
+                { "rating": 3, "name": "LLS 1010" },
+                { "rating": 3, "name": "LLS 1020" },
+                { "rating": 3, "name": "MUS 1070" },
+                { "rating": 3, "name": "MUS 1100" },
+                { "rating": 3, "name": "NAMS 1100" },
+                { "rating": 3, "name": "PSCI 3130" },
+                { "rating": 3, "name": "PSCI 3140" },
+                { "rating": 3, "name": "SOC 2150" },
+                { "rating": 3, "name": "SOC 3300" },
+                { "rating": 3, "name": "SOC 3820" },
+                { "rating": 3, "name": "SOC 3900" },
+                { "rating": 3, "name": "SOC 4150" },
+                { "rating": 3, "name": "SOC 4310" },
+                { "rating": 3, "name": "SOC 4700" },
+                { "rating": 3, "name": "SOWK 2120" },
+                { "rating": 3, "name": "SPCH 3750" },
+                { "rating": 3, "name": "SPCH 4530" },
+                { "rating": 3, "name": "SPED 2220" },
+                { "rating": 3, "name": "WGST 2010" },
+                { "rating": 3, "name": "WGST 2020" },
+                { "rating": 3, "name": "WGST 3750" }
+            ]
+        }
+    },
+    "Management Information Systems": {
+        "Electives":
+        {
+            "credits": "7",
+            "classes": [
+                {
+                    "rating": 3,
+                    "name": "CSCI 1200"
+                },
+                {
+                    "rating": 3,
+                    "name": "CIST 1300"
+                }
+            ]
+        },
+        "Information Assurance":
+        {
+            "credits": "27",
+            "classes": [
+                { "rating": 3, "name": "IASC 1100" },
+                { "rating": 3, "name": "IASC 3350" },
+                { "rating": 3, "name": "IASC 3370" },
+                { "rating": 3, "name": "IASC 3570" },
+                { "rating": 3, "name": "IASC 3600" },
+                { "rating": 3, "name": "IASC 4360" },
+                { "rating": 3, "name": "IASC 4380" },
+                { "rating": 3, "name": "CIST 4530" },
+                { "rating": 3, "name": "IASC 4580" }
+            ]
+        },
+        "Mathematics":
+        {
+            "credits": "6",
+            "classes": [
+                { "rating": 3, "name": "MATH 1930" },
+                { "rating": 3, "name": "MATH 2030" }
+            ]
+        },
+        "Co-Requiste Courses":
+        {
+            "credits": "12",
+            "classes": [
+                { "rating": 3, "name": "ISQA 3310" },
+                { "rating": 3, "name": "CRCJ 1010" },
+                { "rating": 3, "name": "CRCJ 3510|CRCJ 4780" },
+                { "rating": 3, "name": "CRCJ 4130" }
+            ]
+        },
+        "Computer Science Core":
+        {
+            "credits": "21",
+            "classes": [
+                { "rating": 3, "name": "CSCI 1620" },
+                { "rating": 3, "name": "CSCI 2240" },
+                { "rating": 3, "name": "CSCI 3320" },
+                { "rating": 3, "name": "CSCI 3550" },
+                { "rating": 3, "name": "CSCI 3710" },
+                { "rating": 3, "name": "CSCI 4350" },
+                { "rating": 3, "name": "CSCI 4500" }
+            ]
+        },
+        "Information Assurance Electives":
+        {
+            "credits": "8",
+            "classes": [
+                { "rating": 3, "name": "ISQA 3910" },
+                { "rating": 3, "name": "CSCI 4220" },
+                { "rating": 3, "name": "ISQA 4380" },
+                { "rating": 3, "name": "IASC 4450" },
+                { "rating": 3, "name": "IASC 4460" },
+                { "rating": 3, "name": "CSCI 4560" },
+                { "rating": 3, "name": "CSCI 4830" },
+                { "rating": 3, "name": "CSCI 4900" },
+                { "rating": 3, "name": "IASC 4950" },
+                { "rating": 3, "name": "IASC 4980" },
+                { "rating": 3, "name": "IASC 4990" }
+            ]
+        }
+    },
+    "Computer Science": {
+        "IST Core Courses":
+        {
+            "credits": "18",
+            "classes": [
+                { "rating": 3, "name": "CIST 1400" },
+                { "rating": 3, "name": "CIST 1404" },
+                { "rating": 3, "name": "CSCI 1620" },
+                { "rating": 3, "name": "CSCI 2240" },
+                { "rating": 3, "name": "CIST 2100" },
+                { "rating": 3, "name": "CIST 2500" },
+                { "rating": 3, "name": "CIST 3110" }
+            ]
+        },
+        "Electives":
+        {
+            "credits": "7",
+            "classes": [
+                { "rating": 3, "name": "CSCI 1200" },
+                { "rating": 3, "name": "CIST 1300" }
+            ]
+        },
+        "Mathematics":
+        {
+            "credits": "16",
+            "classes": [
+                { "rating": 3, "name": "MATH 1950" },
+                { "rating": 3, "name": "MATH 1960" },
+                { "rating": 3, "name": "CSCI 2030" },
+                { "rating": 3, "name": "MATH 2050" }
+            ]
+        },
+        "Computer Science Core":
+        {
+            "credits": "27",
+            "classes": [
+                { "rating": 3, "name": "CSCI 3320" },
+                { "rating": 3, "name": "CSSI 3710" },
+                { "rating": 3, "name": "CSCI 3550" },
+                { "rating": 3, "name": "CSCI 3660" },
+                { "rating": 3, "name": "CSCI 4220" },
+                { "rating": 3, "name": "CSCI 4350" },
+                { "rating": 3, "name": "CSCI 4500" },
+                { "rating": 3, "name": "CSCI 4830" },
+                { "rating": 3, "name": "CSCI 4970" },
+                { "rating": 3, "name": "CSCI 4000" }
+            ]
+        }
+    },
+    "Information Assurance": {
+        "IST Core":
+        {
+            "credits": "9",
+            "classes": [
+                { "rating": 3, "name": "CIST 1400" },
+                { "rating": 3, "name": "CIST 2100" },
+                { "rating": 3, "name": "CIST 3110" }
+            ]
+        },
+        "Electives":
+        {
+            "credits": "7",
+            "classes": [
+                { "rating": 3, "name": "CSCI 1200" },
+                { "rating": 3, "name": "CIST 1300" }
+            ]
+        },
+        "Information Assurance Core Courses":
+        {
+            "credits": "27",
+            "classes": [
+                { "rating": 3, "name": "IASC 1100" },
+                { "rating": 3, "name": "IASC 3350" },
+                { "rating": 3, "name": "IASC 3370" },
+                { "rating": 3, "name": "IASC 3570" },
+                { "rating": 3, "name": "IASC 3600" },
+                { "rating": 3, "name": "IASC 4360" },
+                { "rating": 3, "name": "IASC 4380" },
+                { "rating": 3, "name": "CIST 4530" },
+                { "rating": 3, "name": "IASC 4580" }
+            ]
+        },
+        "Mathematics":
+        {
+            "credits": "8",
+            "classes": [
+                { "rating": 3, "name": "MATH 1950" },
+                { "rating": 3, "name": "MATH 2030" }
+            ]
+        },
+        "Information Assurance Co-Requiste Courses":
+        {
+            "credits": "12",
+            "classes": [
+                { "rating": 3, "name": "ISQA 3310" },
+                { "rating": 3, "name": "CRCJ 1010" },
+                { "rating": 3, "name": "CRCJ 3510|CRCJ 4780" },
+                { "rating": 3, "name": "CRCJ 4130" }
+            ]
+        },
+        "Information Assurance Computer Science Core":
+        {
+            "credits": "21",
+            "classes": [
+                { "rating": 3, "name": "CSCI 1620" },
+                { "rating": 3, "name": "CSCI 2240" },
+                { "rating": 3, "name": "CSCI 3320" },
+                { "rating": 3, "name": "CSCI 3550" },
+                { "rating": 3, "name": "CSCI 3710" },
+                { "rating": 3, "name": "CSCI 4350" },
+                { "rating": 3, "name": "CSCI 4500" }
+            ]
+        },
+        "Electives":
+        {
+            "credits": "8",
+            "classes": [
+                { "rating": 3, "name": "ISQA 3910" },
+                { "rating": 3, "name": "CSCI 4220" },
+                { "rating": 3, "name": "ISQA 4380" },
+                { "rating": 3, "name": "IASC 4450" },
+                { "rating": 3, "name": "IASC 4460" },
+                { "rating": 3, "name": "CSCI 4560" },
+                { "rating": 3, "name": "CSCI 4830" },
+                { "rating": 3, "name": "CSCI 4900" },
+                { "rating": 3, "name": "IASC 4950" },
+                { "rating": 3, "name": "IASC 4980" },
+                { "rating": 3, "name": "IASC 4990" }
+            ]
+        }
+    },
+    "Bioinformatics": {
+        "IST Core":
+        {
+            "credits": "24",
+            "classes": [
+                { "rating": 3, "name": "CIST 1400" },
+                { "rating": 3, "name": "CSCI 1620" },
+                { "rating": 3, "name": "CIST 2500" },
+                { "rating": 3, "name": "CIST 3110" },
+                { "rating": 3, "name": "CSCI 3320" },
+                { "rating": 3, "name": "CSCI 3710" },
+                { "rating": 3, "name": "CSCI 4830" },
+                { "rating": 3, "name": "CSCI 4850" },
+                { "rating": 3, "name": "CSCI 4150|ISQA 4890" }
+            ]
+        },
+        "Biology":
+        {
+            "credits": "16",
+            "classes": [
+                { "rating": 3, "name": "BIOL 1450" },
+                { "rating": 3, "name": "BIOL 2140" },
+                { "rating": 3, "name": "BIOL 3020" },
+                { "rating": 3, "name": "BIOL 4130|BIOL 4140" }
+            ]
+        },
+        "Chemsitry":
+        {
+            "credits": "17",
+            "classes": [
+                { "rating": 3, "name": "CHEM 1180" },
+                { "rating": 3, "name": "CHEM 1184" },
+                { "rating": 3, "name": "CHEM 1190" },
+                { "rating": 3, "name": "CHEM 1194" },
+                { "rating": 3, "name": "CHEM 2210" },
+                { "rating": 3, "name": "CHEM 2214" },
+                { "rating": 3, "name": "CHEM 3640" },
+                { "rating": 3, "name": "CHEM 3654" }
+            ]
+        },
+        "Mathematics":
+        {
+            "credits": "11",
+            "classes": [
+                { "rating": 3, "name": "MATH 1950" },
+                { "rating": 3, "name": "MATH 1960" },
+                { "rating": 3, "name": "MATH 2030" }
+            ]
+        },
+        "Bioinformatics Core":
+        {
+            "credits": "19",
+            "classes": [
+                { "rating": 3, "name": "BIOI 1000" },
+                { "rating": 3, "name": "BIOI 3000" },
+                { "rating": 3, "name": "BIOI 3500" },
+                { "rating": 3, "name": "BIOI 4860" },
+                { "rating": 3, "name": "BIOI 4870" },
+                { "rating": 3, "name": "BIOI 4960" },
+                { "rating": 3, "name": "BIOI 4970" },
+                { "rating": 3, "name": "BIOI 4980" }
+            ]
+        }
+    }
+}
