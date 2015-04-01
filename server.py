@@ -155,7 +155,7 @@ def class_selector():
         for x in myCourse:
             courses.append(x)
     #courses=model.Course.query.filter(or_(model.Course.college=='ENGL'))
-    
+
     #Sorting the colleges so that we dont have multiple different ones from requirements
     sortedColleges = sorted(courses, key=itemgetter('college'))
     #model.CourseRequirement.query(new) #breaks webpage for console testing
@@ -178,6 +178,11 @@ def class_selector():
             prevCollege=course.college
             sortCollege.append(course)
     return render_template('classSelector.html',courses=sortedCourses)
+
+@login_required
+@app.route('/schedule', methods=['GET'])
+def schedule():
+    return render_template('schedule.html')
 
 ##Actions
 

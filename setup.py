@@ -17,7 +17,7 @@ def main():
     insert_class_data('data/uno_class_data.json')
 
     print "Ingesting requirements data..."
-    not_found_count = insert_requirements_data('data/ist_requirements')
+    not_found_count = insert_requirements_data('data/ist_requirements.json')
     print "\nCouldn't find {} courses".format(not_found_count)
 
 def insert_class_data(path):
@@ -43,35 +43,26 @@ def insert_class_data(path):
 
 def insert_requirements_data(path):
     not_found_count = 0
-    for root, _, files in os.walk(path):
-        for f in files:
-            if f.lower().endswith('.csv'):
-                not_found_count +=ingest_requirements_csv(os.path.join(root, f))
-    return not_found_count
+    requirements = json.load(file(path, "r"))
 
-def ingest_requirements_csv(csv_file):
-    not_found_count = 0
+    for major_name, major in requirements.items():
+        for cat_name, cat in major.items():
+            new_req = model.Requirement(cat_name, major_name, cat['credits'])
+            db.session.add(new_req)
+            for cls in cat['classes']:
+                if '|' in cls['name']:
+                    continue
 
-    reader = csv.reader(open(csv_file, 'r'), delimiter=',')
+                course_college, course_number = cls['name'].split()
+                course = model.Course.query.filter_by(college=course_college,
+                                        number=course_number).first()
 
-    requirement = next(reader)
-    new_req = model.Requirement(requirement[0], requirement[1])
-    db.session.add(new_req)
+                if not course:
+                    print "Couldn't find course for {} {}".format(course_college, course_number)
+                    not_found_count+=1
+                    continue
 
-    for rule in reader:
-        if '|' in rule[0]:
-            continue
-
-        course_college, course_number = rule[0].split()
-
-        course = model.Course.query.filter_by(college=course_college,
-                                number=course_number).first()
-        if not course:
-            print "Couldn't find course for {} {}".format(course_college, course_number)
-            not_found_count+=1
-            continue
-
-        new_class_req = model.CourseRequirement(new_req, course)
+                new_class_req = model.CourseRequirement(new_req, course)
     db.session.commit()
     return not_found_count
 

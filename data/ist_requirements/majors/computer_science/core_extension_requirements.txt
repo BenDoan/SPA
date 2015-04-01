@@ -1,3 +1,0 @@
--A computer science minor requires 21 credits of core extension course.  
--12 of the credits must be upper level course related to computer science (3000-4999).  
--The other 9 credits can be upper or lower level computer science related classes.

@@ -63,13 +63,16 @@ class Model():
 
         class Requirement(self.db.Model):
             __tablename__ = 'requirements'
+            __table_args__ = (UniqueConstraint('major', 'name'),)
 
             id = db.Column(db.Integer, primary_key=True)
-            name = db.Column(db.String, unique=True)
+            name = db.Column(db.String)
+            major = db.Column(db.String, nullable=False)
             credits = db.Column(db.Integer, nullable=False)
 
-            def __init__(self, name, credits):
+            def __init__(self, name, major, credits):
                 self.name = name
+                self.major = major
                 self.credits = credits
         self.Requirement = Requirement
 
