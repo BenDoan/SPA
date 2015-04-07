@@ -11,6 +11,8 @@ from wtforms.validators import DataRequired
 from passlib.hash import pbkdf2_sha256
 from operator import itemgetter
 
+import random
+
 from model import Model
 
 app = Flask(__name__)
@@ -179,6 +181,33 @@ def schedule():
     return render_template('schedule.html')
 
 ##Actions
+@app.route('/req', methods=['GET'])
+def get_required_classes():
+    major = "Computer Science"
+    out = ""
+
+    # Get major requirements
+    for req in model.Requirement.query.filter(model.Requirement.major == major):
+        classes = model.CourseRequirement.query.filter_by(requirement_id=req.id)
+
+        needed_credits = req.credits/3
+        if len(list(classes)) < needed_credits:
+            print "Not enough credits to choose for {}".format(req.name)
+            needed_credits = len(list(classes))
+
+        out += "<br/>Grabbing {} random classes from {}<br/>".format(needed_credits, req.name)
+
+        for c_req in random.sample(list(classes), needed_credits):
+            out += "{} {} <br/>".format(c_req.course.ident, c_req.course.prereqs)
+
+    # Get general requirements
+    for req in model.Requirement.query.filter(model.Requirement.major == "General University Requirements"):
+        classes =  model.CourseRequirement.query.filter_by(requirement_id=req.id)
+        out += "<br/>Grabbing {} random classes from {}<br/>".format(req.credits/3, req.name)
+
+        for c_req in random.sample(list(classes), req.credits/3):
+            out += "{} {} <br/>".format(c_req.course.ident, c_req.course.prereqs)
+    return out
 
 ##Misc
 @login_required
