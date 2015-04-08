@@ -1,7 +1,26 @@
 {% extends "navbarbase.html" %}
 {% block navcontent %}
+
 <div class="container">
+    <!-- Example row of columns -->
     <div class="row">
+        {% for semester in schedule %}
+        <div class="table-responsive col-xs-6 col-sm-4 col-md-3 col-lg-2">
+            <h4>Semester {{ loop.index }}</h4>
+            <table class="table table-hover table-condensed table-striped">
+                <tr>
+                    <th>#</th>
+                    <th>Class</th>
+                </tr>
+                {% for cls in semester %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ cls.ident }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

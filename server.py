@@ -178,10 +178,43 @@ def class_selector():
 @login_required
 @app.route('/schedule', methods=['GET'])
 def schedule():
-    return render_template('schedule.html')
+    return render_template('schedule.html', schedule=get_schedule())
+
+@app.route('/req', methods=['GET'])
+def req_classes():
+    return get_required_classes()
 
 ##Actions
-@app.route('/req', methods=['GET'])
+
+def get_schedule():
+    major = "Computer Science"
+    out = ""
+
+    listing = []
+
+    # Get major requirements
+    for req in model.Requirement.query.filter(model.Requirement.major == major):
+        classes = model.CourseRequirement.query.filter_by(requirement_id=req.id)
+
+        needed_credits = req.credits/3
+        if len(list(classes)) < needed_credits:
+            print "Not enough credits to choose for {}".format(req.name)
+            needed_credits = len(list(classes))
+
+        for c_req in random.sample(list(classes), needed_credits):
+            listing.append(c_req.course)
+
+    # Get general requirements
+    for req in model.Requirement.query.filter(model.Requirement.major == "General University Requirements"):
+        classes =  model.CourseRequirement.query.filter_by(requirement_id=req.id)
+
+        for c_req in random.sample(list(classes), req.credits/3):
+            listing.append(c_req.course)
+
+    classes_per_semester = 4
+    for i in xrange(0, len(listing), classes_per_semester):
+        yield listing[i:i+classes_per_semester]
+
 def get_required_classes():
     major = "Computer Science"
     out = ""
