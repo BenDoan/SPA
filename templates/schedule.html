@@ -15,7 +15,7 @@
                 {% for cls in semester %}
                 <tr>
                     <td>{{ loop.index }}</td>
-                    <td>{{ cls.ident }}</td>
+                    <td>{{ cls.course.ident }}</td>
                 </tr>
                 {% endfor %}
             </table>

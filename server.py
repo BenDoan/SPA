@@ -12,8 +12,11 @@ from passlib.hash import pbkdf2_sha256
 from operator import itemgetter
 
 import random
+import logging
+import collections
 
 from model import Model
+from requirements import ScheduledCourse
 
 app = Flask(__name__)
 loginmanager = LoginManager()
@@ -26,6 +29,9 @@ app.config['DEBUG'] = True
 app.config['PROPAGATE_EXCEPTIONS'] = True
 app.config['TRAP_BAD_REQUEST_ERRORS'] = True
 
+LOG_FORMAT = '%(asctime)s|%(levelname)s|%(message)s'
+logging.basicConfig(format=LOG_FORMAT)
+
 assets = Environment(app)
 assets.url_expire = False
 
@@ -34,6 +40,7 @@ assets.register('css_all', css)
 
 model = Model(app)
 db = model.db
+
 
 ## Authentication
 class LoginForm(Form):
@@ -180,67 +187,49 @@ def class_selector():
 def schedule():
     return render_template('schedule.html', schedule=get_schedule())
 
-@app.route('/req', methods=['GET'])
-def req_classes():
-    return get_required_classes()
-
 ##Actions
+def get_required_courses():
+    major = "Computer Science"
+
+    major_reqs = model.Requirement.query.filter(model.Requirement.major == major)
+    uni_reqs = model.Requirement.query.filter(model.Requirement.major == "General University Requirements")
+    all_reqs = list(major_reqs) + list(uni_reqs)
+
+    # Get major specific requirements
+    for req in all_reqs:
+        classes = model.CourseRequirement.query.filter_by(requirement_id=req.id)
+
+        needed_credits = req.credits/3
+        if len(list(classes)) < needed_credits:
+            logging.warn("Not enough credits to choose for {}-{}".format(req.major, req.name))
+            needed_credits = len(list(classes))
+
+        for c_req in random.sample(list(classes), needed_credits):
+            yield ScheduledCourse(c_req.course, req)
+
+def fix_prereqs(req_courses):
+    schedule = collections.OrderedDict()
+
+    reqs = sorted(req_courses, key=lambda x: x.course.ident)
+    for r in reqs:
+        # add prereqs to schedule
+        for prereq in r.course.prereqs:
+            if prereq not in schedule.keys():
+                needed_course = model.Course.query.filter_by(number=prereq.split()[-1]).first()
+                if needed_course:
+                    schedule[needed_course.ident] = ScheduledCourse(needed_course, r.requirement)
+                else:
+                    logging.warn("Couldn't find prereq {}".format(prereq))
+        schedule[r.course.ident] = r
+    return schedule.values()
 
 def get_schedule():
-    major = "Computer Science"
-    out = ""
+    listing = fix_prereqs(list(get_required_courses()))
 
-    listing = []
-
-    # Get major requirements
-    for req in model.Requirement.query.filter(model.Requirement.major == major):
-        classes = model.CourseRequirement.query.filter_by(requirement_id=req.id)
-
-        needed_credits = req.credits/3
-        if len(list(classes)) < needed_credits:
-            print "Not enough credits to choose for {}".format(req.name)
-            needed_credits = len(list(classes))
-
-        for c_req in random.sample(list(classes), needed_credits):
-            listing.append(c_req.course)
-
-    # Get general requirements
-    for req in model.Requirement.query.filter(model.Requirement.major == "General University Requirements"):
-        classes =  model.CourseRequirement.query.filter_by(requirement_id=req.id)
-
-        for c_req in random.sample(list(classes), req.credits/3):
-            listing.append(c_req.course)
-
-    classes_per_semester = 4
+    # yield chunks of 4
+    classes_per_semester = 5
     for i in xrange(0, len(listing), classes_per_semester):
         yield listing[i:i+classes_per_semester]
-
-def get_required_classes():
-    major = "Computer Science"
-    out = ""
-
-    # Get major requirements
-    for req in model.Requirement.query.filter(model.Requirement.major == major):
-        classes = model.CourseRequirement.query.filter_by(requirement_id=req.id)
-
-        needed_credits = req.credits/3
-        if len(list(classes)) < needed_credits:
-            print "Not enough credits to choose for {}".format(req.name)
-            needed_credits = len(list(classes))
-
-        out += "<br/>Grabbing {} random classes from {}<br/>".format(needed_credits, req.name)
-
-        for c_req in random.sample(list(classes), needed_credits):
-            out += "{} {} <br/>".format(c_req.course.ident, c_req.course.prereqs)
-
-    # Get general requirements
-    for req in model.Requirement.query.filter(model.Requirement.major == "General University Requirements"):
-        classes =  model.CourseRequirement.query.filter_by(requirement_id=req.id)
-        out += "<br/>Grabbing {} random classes from {}<br/>".format(req.credits/3, req.name)
-
-        for c_req in random.sample(list(classes), req.credits/3):
-            out += "{} {} <br/>".format(c_req.course.ident, c_req.course.prereqs)
-    return out
 
 ##Misc
 @login_required

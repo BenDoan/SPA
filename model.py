@@ -3,7 +3,6 @@ from sqlalchemy.schema import UniqueConstraint
 
 import re
 
-IDENT_REGEX = r'[A-Z]{2,4} ?[0-9]{4}'
 
 class Model():
     def __init__(self, app):
@@ -59,10 +58,12 @@ class Model():
 
             @property
             def prereqs(self):
+                IDENT_REGEX = r'([A-Z]{2,4}) ?([0-9]{4})'
                 #FIXME: assumed course ident format, doesn't deal with ors
                 chopped_preqreqs = self._prereqs.split("or")[0]
                 matches = re.findall(IDENT_REGEX, chopped_preqreqs)
-                return matches
+
+                return [" ".join(x) for x in matches]
 
             @prereqs.setter
             def prereqs(self, val):
