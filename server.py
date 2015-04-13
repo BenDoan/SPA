@@ -154,14 +154,9 @@ def profile():
 @login_required
 @app.route('/classSelector',methods=['GET'])
 def class_selector():
-    #query just for CS
-    requirementNums=model.CourseRequirement.query.filter(model.CourseRequirement.requirement_id.in_([1,2,3,4,24,25,26,27,28,29,30,31])).all()
+    selectedMajor = request.args.get('majorSelected', 'None')
 
-    #pulling in all classes for the requirement given
-    coursesToPull=[]
-    for courseReq in requirementNums:
-        coursesToPull.append(courseReq.course_id)
-    courses=model.Course.query.filter(model.Course.id.in_(coursesToPull)).all()
+    courses=get_courses_for_major(selectedMajor)
 
     #Sorting the colleges so that we dont have multiple different ones from requirements
     sortedColleges = sorted(courses, key=itemgetter('college'))
@@ -180,7 +175,7 @@ def class_selector():
         else:#starting value so append and move on
             prevCollege=course.college
             sortCollege.append(course)
-    return render_template('classSelector.html',courses=sortedCourses)
+    return render_template('classSelector.html',courses=sortedCourses, selectedMajor=selectedMajor)
 
 @login_required
 @app.route('/schedule', methods=['GET'])
@@ -188,6 +183,34 @@ def schedule():
     return render_template('schedule.html', schedule=get_schedule())
 
 ##Actions
+def get_courses_for_major(selectedMajor):
+    #populate hardcoded classes from what we had in the drop down
+    majorRequirements=['General University Requirements']
+    if selectedMajor == 'CS':
+        majorRequirements.append('Computer Science')
+    elif  selectedMajor == 'IA':
+        majorRequirements.append('Information Assurance')
+    elif  selectedMajor == 'BIOI':
+        majorRequirements.append('Bioinformatics')
+    elif  selectedMajor == 'MIS':
+        majorRequirements.append('Management Information Systems')
+    else:
+        majorRequirements=[]
+    #Query for all the course requirement id's, now its more dynamic in case our DB changes
+    requirements=model.Requirement.query.filter(model.Requirement.major.in_(majorRequirements)).all()
+    #iterate through then database resposes to get the id's out
+    requirementIdList=[]
+    for requirement in requirements:
+        requirementIdList.append(requirement.id)
+    #query the database again with the id's we found to get out the classes required
+    requirementNums=model.CourseRequirement.query.filter(model.CourseRequirement.requirement_id.in_(requirementIdList)).all()
+    #pulling in all classes for the requirement given
+    coursesToPull=[]
+    for courseReq in requirementNums:
+        coursesToPull.append(courseReq.course_id)
+    #return a database object of the classes now
+    return model.Course.query.filter(model.Course.id.in_(coursesToPull)).all()
+
 def get_required_courses():
     major = "Computer Science"
 

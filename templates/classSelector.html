@@ -7,6 +7,19 @@
 {% endif %}
 <div class="jumbotron">
     <div class="container">
+	<div>
+	<form name='majorSelect' method='get'>
+		<select name='majorSelected'>
+		  {% if selectedMajor == 'None' %}<option value="None">Please Select Your Major</option>{%endif%}
+		  <option value="CS" {% if selectedMajor == 'CS' %}selected{%endif%}>Computer Science</option>
+		  <option value="MIS" {% if selectedMajor == 'MIS' %}selected{%endif%}>Management Information Systems</option>
+		  <option value="IA" {% if selectedMajor == 'IA' %}selected{%endif%}>Information Assurance</option>
+		  <option value="BIOI" {% if selectedMajor == 'BIOI' %}selected{%endif%}>Bioinformatics</option>
+		</select>
+	<input type='submit'/>
+	</form>
+		<br><br>
+	</div>
 	<!--TODO: Sort them so they are displayed in numerical order, probably need to be done server side
 		Add functionality so the cut off is 4-5 rows of classes and the rest are searchable in some manner
 	 -->
