@@ -9,7 +9,7 @@
     <div class="container">
 	<div>
 	<form name='majorSelect' method='get'>
-		<select name='majorSelected'>
+		<select name='majorSelected' id='majorSelector'>
 		  {% if selectedMajor == 'None' %}<option value="None">Please Select Your Major</option>{%endif%}
 		  <option value="CS" {% if selectedMajor == 'CS' %}selected{%endif%}>Computer Science</option>
 		  <option value="MIS" {% if selectedMajor == 'MIS' %}selected{%endif%}>Management Information Systems</option>
@@ -122,6 +122,7 @@
 				data.classes[0][classHead].push(classNumber);
 			}
  	   	}
+		data.options[0]['majorSelected']=$('#majorSelector').val();
 		//console.log(JSON.stringify(data)); //uncomment to check out what we are passing
 		location.href = "/mySchedule?classData="+JSON.stringify(data);
 	}
