@@ -122,6 +122,7 @@
 				data.classes[0][classHead].push(classNumber);
 			}
  	   	}
+		data.options[0]['creditsLoad'] = '15';
 		data.options[0]['majorSelected']=$('#majorSelector').val();
 		//console.log(JSON.stringify(data)); //uncomment to check out what we are passing
 		location.href = "/mySchedule?classData="+JSON.stringify(data);
