@@ -16,6 +16,15 @@
       <option value="Information Assurance" {% if selectedMajor == 'Information Assurance' %}selected{%endif%}>Information Assurance</option>
       <option value="Bioinformatics" {% if selectedMajor == 'Bioinformatics' %}selected{%endif%}>Bioinformatics</option>
     </select>
+
+	<select name='creditNum' id='creditNum'>
+		{% if creditNum == 'None' %}<option value="None">Credit Hours</option>{%endif%}
+		<option value="9" {% if creditNum == '9' %}selected{%endif%}>9</option>
+		<option value="12" {% if creditNum == '12' %}selected{%endif%}>12</option>
+		<option value="15" {% if creditNum == '15' %}selected{%endif%}>15</option>
+		<option value="18" {% if creditNum == '18' %}selected{%endif%}>18</option>
+		<option value="21" {% if creditNum == '21' %}selected{%endif%}>21</option>
+	</select>
 <input type='submit' />
 </form>
     <br><br>
@@ -121,7 +130,8 @@
 				data.classes[0][classHead].push(classNumber);
 			}
  	   	}
-		data.options[0]['creditsLoad'] = '15';
+		
+		data.options[0]['creditsLoad'] = $('creditNum').val();
 		data.options[0]['majorSelected']=$('#majorSelector').val();
 
         var url = "/schedule";

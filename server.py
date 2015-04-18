@@ -191,7 +191,7 @@ def profile():
 @app.route('/classSelector',methods=['GET'])
 def class_selector():
     selectedMajor = request.args.get('majorSelected', 'None')
-
+    creditNum = request.args.get('creditNum', 'None')
     courses=get_courses_for_major(selectedMajor)
 
     #Sorting the colleges so that we dont have multiple different ones from requirements
@@ -211,7 +211,7 @@ def class_selector():
         else:#starting value so append and move on
             prevCollege=course.college
             sortCollege.append(course)
-    return render_template('classSelector.html',courses=sortedCourses, selectedMajor=selectedMajor)
+    return render_template('classSelector.html',courses=sortedCourses, selectedMajor=selectedMajor, creditNum=creditNum)
 
 @login_required
 @app.route('/schedule', methods=['GET', 'POST'])
