@@ -223,6 +223,8 @@ def schedule():
             abort(400)
 
         major = selected_hist["options"][0]["majorSelected"]
+        creditsLoad = selected_hist['options'][0]['creditsLoad']
+        classesLoad = int(creditsLoad)/3
 
         history = []
         for college, courses in selected_hist["classes"][0].items():
@@ -233,7 +235,7 @@ def schedule():
                 else:
                     flash("Couldn't find course: {} {}".format(college, course), "warning")
 
-        generatedSchedule=get_schedule(major, history)
+        generatedSchedule=get_schedule(major, history, classesLoad)
         formattedSchedule=[]
         for semester in generatedSchedule:
             singleSemester=[]
@@ -345,12 +347,12 @@ def fix_prereqs(req_courses, history):
 
     return schedule.values()
 
-def get_schedule(major, history=None):
+def get_schedule(major, history=None, classes_per_semester=5):
     listing = fix_prereqs(list(get_required_courses(major, history)), history)
 
     #FIXME make sure prereqs are separated by at least a semester
     # yield chunks of 4
-    classes_per_semester = 5
+    #classes_per_semester = 5 #going to get passed instead
     for i in xrange(0, len(listing), classes_per_semester):
         yield listing[i:i+classes_per_semester]
 
