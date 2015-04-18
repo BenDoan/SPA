@@ -256,8 +256,7 @@ def about():
 def hasSchedule():
     if current_user.schedule:
         return True
-    else:
-        return False
+    return False
 
 def pushClasslistToDB(generatedSchedule):
     current_user.schedule=json.dumps(generatedSchedule)
