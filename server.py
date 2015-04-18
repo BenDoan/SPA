@@ -224,6 +224,8 @@ def schedule():
 
         major = selected_hist["options"][0]["majorSelected"]
         creditsLoad = selected_hist['options'][0]['creditsLoad']
+        if creditsLoad == 'None':
+            creditsLoad = 15
         classesLoad = int(creditsLoad)/3
 
         history = []
