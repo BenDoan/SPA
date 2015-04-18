@@ -147,13 +147,27 @@ def signout():
     logout_user()
     return redirect('/signin')
 
+@login_required
+@app.route('/deleteSchedule')
+def deleteSchedule():
+    current_user.schedule=""
+    db.session.commit()
+    flash("User Schedule Deleted")
+    return redirect('/')
+
 ##Content
 @login_required
 @app.route('/', methods=['GET'])
 def index():
     if current_user.is_anonymous():
         return redirect("/signin")
-    return render_template('index.html')
+
+    #Made this global so I can use it throughout the site
+    #userSchedule=False
+    #if current_user.schedule:
+    #    userSchedule=True
+
+    return render_template('index.html',userSchedule=hasSchedule())
 
 @login_required
 @app.route('/profile', methods=['GET', 'POST'])
@@ -171,7 +185,7 @@ def profile():
             current_user.password = pbkdf2_sha256.encrypt(form.password.data)
         db.session.commit()
         flash("User updated", "success")
-    return render_template('profile.html', form=EditUserForm())
+    return render_template('profile.html', form=EditUserForm(), userSchedule=hasSchedule())
 
 @login_required
 @app.route('/classSelector',methods=['GET'])
@@ -219,10 +233,18 @@ def schedule():
                 else:
                     flash("Couldn't find course: {} {}".format(college, course))
 
-        return render_template('schedule.html', schedule=get_schedule(major, history))
+        generatedSchedule=get_schedule(major, history)
+        formattedSchedule=[]
+        for semester in generatedSchedule:
+            singleSemester=[]
+            for cls in semester:
+                singleSemester.append({'course':{'title':cls.course.title, 'ident':cls.course.ident, 'credits':cls.course.credits}})
+            formattedSchedule.append(singleSemester)
+        pushClasslistToDB(formattedSchedule)
+        return render_template('schedule.html', schedule=formattedSchedule)
     elif request.method == 'GET':
-        flash("Generating schedule with no user history", "info")
-        return render_template('schedule.html', schedule=get_schedule("Computer Science"))
+        #flash("Generating schedule with no user history", "info")
+        return render_template('schedule.html', schedule=getClasslistFromDB())
 
 
 @login_required
@@ -231,6 +253,22 @@ def about():
     return render_template('about.html')
 
 ##Actions
+def hasSchedule():
+    if current_user.schedule:
+        return True
+    else:
+        return False
+
+def pushClasslistToDB(generatedSchedule):
+    current_user.schedule=json.dumps(generatedSchedule)
+    db.session.commit()
+
+def getClasslistFromDB():
+    if current_user.schedule:
+        return json.loads(current_user.schedule)
+    else:
+        return ""
+
 def get_courses_for_major(selectedMajor):
     majorRequirements = ['General University Requirements', selectedMajor]
     if selectedMajor == 'None':

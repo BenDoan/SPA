@@ -18,4 +18,11 @@
         </div>
     </div>
 </form>
+
+{% if userSchedule %}
+	<form action = '/deleteSchedule' method='GET'>
+		<button type="submit" class="btn btn-danger">Delete Schedule</button>
+	</form>
+{% endif %}
+
 {% endblock %}

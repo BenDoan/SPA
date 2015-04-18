@@ -17,6 +17,7 @@ class Model():
             email = db.Column(db.String(120))
             password = db.Column(db.String)
             authenticated = db.Column(db.Boolean())
+            schedule = db.Column(db.String)
 
             def __init__(self, username, email):
                 self.username = username
