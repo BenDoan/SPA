@@ -7,7 +7,7 @@ from htmlmin import minify
 from flask.ext.login import LoginManager,login_user,logout_user, current_user, login_required
 from flask_wtf import Form
 from wtforms import StringField, PasswordField, TextField, TextAreaField
-from wtforms.validators import DataRequired
+from wtforms import validators
 from passlib.hash import pbkdf2_sha256
 from operator import itemgetter
 
@@ -35,30 +35,37 @@ logging.basicConfig(format=LOG_FORMAT)
 assets = Environment(app)
 assets.url_expire = False
 
-css = Bundle('css/main.css', 'css/bootstrap.css', 'css/bootstrap-theme.css', filters="cssmin", output='css/gen/packed.css')
+css = Bundle('css/main.css', 'css/bootstrap.css', filters="cssmin", output='css/gen/packed.css')
 assets.register('css_all', css)
 
 model = Model(app)
 db = model.db
 
-
 ## Authentication
 class LoginForm(Form):
-    name = StringField('name', validators=[DataRequired()])
-    password = PasswordField('password', validators=[DataRequired()])
+    name = StringField('name', validators=[validators.DataRequired()])
+    password = PasswordField('password', validators=[validators.DataRequired()])
 
 class SignupForm(Form):
-    name = StringField('name', validators=[DataRequired()])
-    email = StringField('email', validators=[DataRequired()])
-    password = PasswordField('password', validators=[DataRequired()])
-    repeatpassword = PasswordField('repeatpassword', validators=[DataRequired()])
+    name = StringField('name', validators=[validators.DataRequired()])
+    email = StringField('email', validators=[validators.DataRequired()])
+    password = PasswordField('password', validators=[validators.DataRequired()])
+    repeatpassword = PasswordField('repeatpassword', validators=[validators.DataRequired()])
 
 class AddRoomForm(Form):
-    title = TextField('title', validators=[DataRequired()])
-    number = TextField('number', validators=[DataRequired()])
-    short_description = TextAreaField('short_description', validators=[DataRequired()])
-    long_description = TextAreaField('long_description', validators=[DataRequired()])
-    image = TextField('image', validators=[DataRequired()])
+    title = TextField('title', validators=[validators.DataRequired()])
+    number = TextField('number', validators=[validators.DataRequired()])
+    short_description = TextAreaField('short_description', validators=[validators.DataRequired()])
+    long_description = TextAreaField('long_description', validators=[validators.DataRequired()])
+    image = TextField('image', validators=[validators.DataRequired()])
+
+class EditUserForm(Form):
+    name = TextField('name')
+    email = TextField('email')
+    password = PasswordField('password', [
+       validators.EqualTo('confirm', message='Passwords must match')
+    ])
+    confirm = PasswordField('Repeat password')
 
 def create_user(username, email, password):
     newuser = model.User(username,email)
@@ -147,9 +154,22 @@ def index():
     return render_template('index.html')
 
 @login_required
-@app.route('/profile', methods=['GET'])
+@app.route('/profile', methods=['GET', 'POST'])
 def profile():
-    return render_template('profile.html')
+    if request.method == "POST":
+        form = EditUserForm()
+        if not form.validate_on_submit():
+            for error in form.errors:
+                flash("Error for {}".format(error), "danger")
+            return render_template("profile.html", form=form)
+
+        current_user.username = form.name.data
+        current_user.email = form.email.data
+        if form.password.data.strip() != "":
+            current_user.password = pbkdf2_sha256.encrypt(form.password.data)
+        db.session.commit()
+        flash("User updated", "success")
+    return render_template('profile.html', form=EditUserForm())
 
 @login_required
 @app.route('/classSelector',methods=['GET'])
@@ -233,17 +253,23 @@ def get_required_courses():
 def fix_prereqs(req_courses):
     schedule = collections.OrderedDict()
 
+    def add_prereqs(reqs):
+        for r in reqs:
+            # add prereqs to schedule
+            for prereq in r.course.prereqs:
+                if prereq not in schedule.keys():
+                    c, n = prereq.split()
+                    needed_course = model.Course.query.filter_by(college=c, number=n).first()
+                    if needed_course:
+                        schedule[needed_course.ident] = ScheduledCourse(needed_course, r.requirement)
+                        #add_prereqs(ScheduledCourse(needed_course, r.requirement))
+                    else:
+                        logging.warn("Couldn't find prereq {}".format(prereq))
+            schedule[r.course.ident] = r
+
     reqs = sorted(req_courses, key=lambda x: x.course.ident)
-    for r in reqs:
-        # add prereqs to schedule
-        for prereq in r.course.prereqs:
-            if prereq not in schedule.keys():
-                needed_course = model.Course.query.filter_by(number=prereq.split()[-1]).first()
-                if needed_course:
-                    schedule[needed_course.ident] = ScheduledCourse(needed_course, r.requirement)
-                else:
-                    logging.warn("Couldn't find prereq {}".format(prereq))
-        schedule[r.course.ident] = r
+    add_prereqs(reqs)
+
     return schedule.values()
 
 def get_schedule():
