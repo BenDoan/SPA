@@ -83,7 +83,7 @@
 <!--Ends out the loop for the classes-->
 	
     </div>
-    <button type="button" class='finalSubmitButton' onclick='submitButtomClicked'>Submit My Classes!</button>
+    {% if selectedMajor != 'None' %}<button type="button" class='finalSubmitButton' onclick='submitButtonClicked()'>Submit My Classes!</button>{%endif%}
     
 </div>
 
@@ -104,8 +104,27 @@
 	
 	function submitButtonClicked()
 	{
-		
-		
+		var buttonsClicked = $('.activeButton');
+		var data = {classes:[{}], options:[{}]};
+		for(var i = (buttonsClicked.length - 1); i >= 0; i--)
+		{
+			$td = $($('.activeButton')[i]);
+			var $th = $td.closest('table').find('th').eq($td.index());
+			classHead=$th.prop('innerText');
+			classNumber=$td.prop('innerText');
+			if (!(data.classes[0].hasOwnProperty(classHead)))
+			{
+				data.classes[0][classHead]=[];
+				data.classes[0][classHead].push(classNumber);
+			}
+			else
+			{
+				data.classes[0][classHead].push(classNumber);
+			}
+ 	   	}
+		//console.log(JSON.stringify(data)); //uncomment to check out what we are passing
+		location.href = "/mySchedule?classData="+JSON.stringify(data);
 	}
+
 </script>
 {% endblock %}
