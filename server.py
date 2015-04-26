@@ -14,6 +14,8 @@ from operator import itemgetter
 import random
 import logging
 import collections
+import urllib
+import json
 
 from model import Model
 from requirements import ScheduledCourse
@@ -198,24 +200,30 @@ def class_selector():
     return render_template('classSelector.html',courses=sortedCourses, selectedMajor=selectedMajor)
 
 @login_required
-@app.route('/schedule', methods=['GET'])
+@app.route('/schedule', methods=['GET', 'POST'])
 def schedule():
-    return render_template('schedule.html', schedule=get_schedule())
+    if request.method == 'POST':
+        selected_hist = json.loads(urllib.unquote(request.form.get("user_history", "")))
+        if selected_hist == "" or "classes" not in selected_hist:
+            logging.warn("Bad user history: {}".format(selected_hist))
+            abort(400)
+
+        major = selected_hist["options"][0]["majorSelected"]
+
+        history = []
+        for college, courses in selected_hist["classes"][0].items():
+            for course in courses:
+                history.append(model.Course.query.filter_by(college=college, number=course).first())
+
+        return render_template('schedule.html', schedule=get_schedule(major, history))
+    elif request.method == 'GET':
+        flash("Generating schedule with no user history", "info")
+        return render_template('schedule.html', schedule=get_schedule("Computer Science"))
 
 ##Actions
 def get_courses_for_major(selectedMajor):
-    #populate hardcoded classes from what we had in the drop down
-    majorRequirements=['General University Requirements']
-    if selectedMajor == 'CS':
-        majorRequirements.append('Computer Science')
-    elif  selectedMajor == 'IA':
-        majorRequirements.append('Information Assurance')
-    elif  selectedMajor == 'BIOI':
-        majorRequirements.append('Bioinformatics')
-    elif  selectedMajor == 'MIS':
-        majorRequirements.append('Management Information Systems')
-    else:
-        majorRequirements=[]
+    majorRequirements = ['General University Requirements', selectedMajor]
+
     #Query for all the course requirement id's, now its more dynamic in case our DB changes
     requirements=model.Requirement.query.filter(model.Requirement.major.in_(majorRequirements)).all()
     #iterate through then database resposes to get the id's out
@@ -231,33 +239,42 @@ def get_courses_for_major(selectedMajor):
     #return a database object of the classes now
     return model.Course.query.filter(model.Course.id.in_(coursesToPull)).all()
 
-def get_required_courses():
-    major = "Computer Science"
-
+def get_required_courses(major, history=None):
     major_reqs = model.Requirement.query.filter(model.Requirement.major == major)
     uni_reqs = model.Requirement.query.filter(model.Requirement.major == "General University Requirements")
     all_reqs = list(major_reqs) + list(uni_reqs)
 
     # Get major specific requirements
     for req in all_reqs:
-        classes = model.CourseRequirement.query.filter_by(requirement_id=req.id)
+        courses = [x.course for x in model.CourseRequirement.query.filter_by(requirement_id=req.id)]
 
-        needed_credits = req.credits/3
-        if len(list(classes)) < needed_credits:
+        needed_credits = req.credits
+        have_credits = sum((x.credits for x in courses))
+        if have_credits < needed_credits:
+            #FIXME handle this case better
             logging.warn("Not enough credits to choose for {}-{}".format(req.major, req.name))
-            needed_credits = len(list(classes))
 
-        for c_req in random.sample(list(classes), needed_credits):
-            yield ScheduledCourse(c_req.course, req)
+            needed_credits = have_credits
 
-def fix_prereqs(req_courses):
+        taken_credits = 0
+        while taken_credits < needed_credits:
+            random_course = random.sample(courses, 1)[0]
+
+            taken_credits += random_course.credits
+            if history and random_course in history:
+                continue
+            else:
+                yield ScheduledCourse(random_course, req)
+
+def fix_prereqs(req_courses, history):
     schedule = collections.OrderedDict()
+    history = [x.ident for x in history] if history else []
 
     def add_prereqs(reqs):
         for r in reqs:
             # add prereqs to schedule
             for prereq in r.course.prereqs:
-                if prereq not in schedule.keys():
+                if prereq not in schedule.keys() and prereq not in history:
                     c, n = prereq.split()
                     needed_course = model.Course.query.filter_by(college=c, number=n).first()
                     if needed_course:
@@ -272,9 +289,10 @@ def fix_prereqs(req_courses):
 
     return schedule.values()
 
-def get_schedule():
-    listing = fix_prereqs(list(get_required_courses()))
+def get_schedule(major, history=None):
+    listing = fix_prereqs(list(get_required_courses(major, history)), history)
 
+    #FIXME make sure prereqs are separated by at least a semester
     # yield chunks of 4
     classes_per_semester = 5
     for i in xrange(0, len(listing), classes_per_semester):

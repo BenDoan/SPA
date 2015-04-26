@@ -49,6 +49,7 @@ class Model():
             desc = db.Column(db.String, nullable=False)
             _prereqs = db.Column(db.String)
             college = db.Column(db.String, nullable=False)
+            credits = db.Column(db.Integer, nullable=False)
 
             def __init__(self, number="", title="", desc="", prereqs=""):
                 self.number  = number

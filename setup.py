@@ -35,6 +35,18 @@ def insert_class_data(path):
                     nc.prereqs = course['prereq']
                     nc.college = college_name
 
+                    first_section = course['sections'].values()[0]
+                    if "Credit Hours" not in first_section:
+                        print "Can't find credit hours for {}{}".format(nc.college, nc.number)
+                        continue
+
+                    credits = first_section["Credit Hours"]
+                    if not credits.isdigit():
+                        #FIXME always takes the last number in a credit range
+                        credits = credits.split("-")[-1]
+
+                    nc.credits = credits
+
                     db.session.add(nc)
                     db.session.commit()
                 except IntegrityError:
