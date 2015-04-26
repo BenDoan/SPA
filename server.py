@@ -213,7 +213,11 @@ def schedule():
         history = []
         for college, courses in selected_hist["classes"][0].items():
             for course in courses:
-                history.append(model.Course.query.filter_by(college=college, number=course).first())
+                c = model.Course.query.filter_by(college=college, number=course).first()
+                if c:
+                    history.append(c)
+                else:
+                    flash("Couldn't find course: {} {}".format(college, course))
 
         return render_template('schedule.html', schedule=get_schedule(major, history))
     elif request.method == 'GET':
