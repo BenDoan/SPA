@@ -224,6 +224,12 @@ def schedule():
         flash("Generating schedule with no user history", "info")
         return render_template('schedule.html', schedule=get_schedule("Computer Science"))
 
+
+@login_required
+@app.route('/about', methods=['GET'])
+def about():
+    return render_template('about.html')
+
 ##Actions
 def get_courses_for_major(selectedMajor):
     majorRequirements = ['General University Requirements', selectedMajor]

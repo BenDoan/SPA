@@ -20,6 +20,7 @@
                 <li {% if request.path == "/classSelector" %}class="active"{% endif %}><a href="/classSelector">Class Select</a></li>
                 <li {% if request.path.startswith("/schedule") %}class="active"{% endif %}><a href="/schedule">Schedule</a></li>
                 <li {% if request.path.startswith("/profile") %}class="active"{% endif %}><a href="/profile">Profile</a></li>
+                <li {% if request.path == "/about" %}class="active"{% endif %}><a href="/about">About</a></li>
             </ul>
             <span class="navbar-right">
                 <p class="navbar-text">Logged in as <strong><a href="/profile">{{ current_user.username }}</strong></a></p>
