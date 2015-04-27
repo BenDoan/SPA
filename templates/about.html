@@ -1,0 +1,14 @@
+{% extends "navbarbase.html" %}
+{% block navcontent %}
+{% if alert_type == "success" %}
+    <div class="alert alert-success" role="alert">{{ alert }}</div>
+{% elif alert_type == "failure" %}
+    <div class="alert alert-danger" role="alert">{{ alert }}</div>
+{% endif %}
+<div class="jumbotron">
+    <div class="container">
+	<!-- Your Stuffs go here! -->
+    </div>
+</div>
+
+{% endblock %}
