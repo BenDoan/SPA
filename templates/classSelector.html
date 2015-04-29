@@ -71,7 +71,7 @@
 			{% set counter=0 %}
 		{% endif %}
 		{% if rowCounter != ROW_MAX %}
-				<td><button type="button" onclick='buttonClicked(this)'>{{course.number}}</button></td>
+        <td><button data-toggle="popover" data-placement="top" data-content="{{ course.title }}" type="button" onclick='buttonClicked(this)'>{{course.number}}</button></td>
 		{% endif %}
 		{% set counter=counter+1 %}
 		{% set courseBefore=course.college %}
