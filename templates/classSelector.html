@@ -8,6 +8,7 @@
 <div class="jumbotron">
     <div class="container">
 	<div>
+<form name='majorSelect' method='get'>
     <select name='majorSelected' id='majorSelector'>
       {% if selectedMajor == 'None' %}<option value="None">Please Select Your Major</option>{%endif%}
       <option value="Computer Science" {% if selectedMajor == 'CS' %}selected{%endif%}>Computer Science</option>
@@ -15,6 +16,8 @@
       <option value="Information Assurance" {% if selectedMajor == 'IA' %}selected{%endif%}>Information Assurance</option>
       <option value="Bioinformatics" {% if selectedMajor == 'BIOI' %}selected{%endif%}>Bioinformatics</option>
     </select>
+<input type='submit' />
+</form>
     <br><br>
 	</div>
 	<!--TODO: Sort them so they are displayed in numerical order, probably need to be done server side
