@@ -282,6 +282,8 @@ def fix_prereqs(req_courses, history):
     schedule = collections.OrderedDict()
     history = [x.ident for x in history] if history else []
 
+    classes_checked = {}
+    recheck = []
     def add_prereqs(reqs):
         for r in reqs:
             # add prereqs to schedule
@@ -291,13 +293,18 @@ def fix_prereqs(req_courses, history):
                     needed_course = model.Course.query.filter_by(college=c, number=n).first()
                     if needed_course:
                         schedule[needed_course.ident] = ScheduledCourse(needed_course, r.requirement)
-                        #add_prereqs(ScheduledCourse(needed_course, r.requirement))
+                        recheck.append(needed_course)
                     else:
                         logging.warn("Couldn't find prereq {}".format(prereq))
+            classes_checked[r.course.ident] = True
             schedule[r.course.ident] = r
 
     reqs = sorted(req_courses, key=lambda x: x.course.ident)
     add_prereqs(reqs)
+
+    while len(classes_checked) != len(schedule):
+        while recheck:
+            add_prereqs([ScheduledCourse(recheck.pop(), None)])
 
     return schedule.values()
 
