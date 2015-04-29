@@ -152,7 +152,7 @@ def signout():
 def deleteSchedule():
     current_user.schedule=""
     db.session.commit()
-    flash("User Schedule Deleted")
+    flash("User Schedule Deleted", "success")
     return redirect('/')
 
 ##Content
@@ -231,7 +231,7 @@ def schedule():
                 if c:
                     history.append(c)
                 else:
-                    flash("Couldn't find course: {} {}".format(college, course))
+                    flash("Couldn't find course: {} {}".format(college, course), "warning")
 
         generatedSchedule=get_schedule(major, history)
         formattedSchedule=[]
