@@ -233,6 +233,8 @@ def about():
 ##Actions
 def get_courses_for_major(selectedMajor):
     majorRequirements = ['General University Requirements', selectedMajor]
+    if selectedMajor == 'None':
+        majorRequirements = []
 
     #Query for all the course requirement id's, now its more dynamic in case our DB changes
     requirements=model.Requirement.query.filter(model.Requirement.major.in_(majorRequirements)).all()
