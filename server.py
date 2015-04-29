@@ -147,13 +147,27 @@ def signout():
     logout_user()
     return redirect('/signin')
 
+@login_required
+@app.route('/deleteSchedule')
+def deleteSchedule():
+    current_user.schedule=""
+    db.session.commit()
+    flash("User Schedule Deleted", "success")
+    return redirect('/')
+
 ##Content
 @login_required
 @app.route('/', methods=['GET'])
 def index():
     if current_user.is_anonymous():
         return redirect("/signin")
-    return render_template('index.html')
+
+    #Made this global so I can use it throughout the site
+    #userSchedule=False
+    #if current_user.schedule:
+    #    userSchedule=True
+
+    return render_template('index.html',userSchedule=hasSchedule())
 
 @login_required
 @app.route('/profile', methods=['GET', 'POST'])
@@ -171,13 +185,13 @@ def profile():
             current_user.password = pbkdf2_sha256.encrypt(form.password.data)
         db.session.commit()
         flash("User updated", "success")
-    return render_template('profile.html', form=EditUserForm())
+    return render_template('profile.html', form=EditUserForm(), userSchedule=hasSchedule())
 
 @login_required
 @app.route('/classSelector',methods=['GET'])
 def class_selector():
     selectedMajor = request.args.get('majorSelected', 'None')
-
+    creditNum = request.args.get('creditNum', 'None')
     courses=get_courses_for_major(selectedMajor)
 
     #Sorting the colleges so that we dont have multiple different ones from requirements
@@ -197,7 +211,7 @@ def class_selector():
         else:#starting value so append and move on
             prevCollege=course.college
             sortCollege.append(course)
-    return render_template('classSelector.html',courses=sortedCourses, selectedMajor=selectedMajor)
+    return render_template('classSelector.html',courses=sortedCourses, selectedMajor=selectedMajor, creditNum=creditNum)
 
 @login_required
 @app.route('/schedule', methods=['GET', 'POST'])
@@ -209,6 +223,10 @@ def schedule():
             abort(400)
 
         major = selected_hist["options"][0]["majorSelected"]
+        creditsLoad = selected_hist['options'][0]['creditsLoad']
+        if creditsLoad == 'None':
+            creditsLoad = 15
+        classesLoad = int(creditsLoad)/3
 
         history = []
         for college, courses in selected_hist["classes"][0].items():
@@ -217,12 +235,20 @@ def schedule():
                 if c:
                     history.append(c)
                 else:
-                    flash("Couldn't find course: {} {}".format(college, course))
+                    flash("Couldn't find course: {} {}".format(college, course), "warning")
 
-        return render_template('schedule.html', schedule=get_schedule(major, history))
+        generatedSchedule=get_schedule(major, history, classesLoad)
+        formattedSchedule=[]
+        for semester in generatedSchedule:
+            singleSemester=[]
+            for cls in semester:
+                singleSemester.append({'course':{'title':cls.course.title, 'ident':cls.course.ident, 'credits':cls.course.credits}})
+            formattedSchedule.append(singleSemester)
+        pushClasslistToDB(formattedSchedule)
+        return render_template('schedule.html', schedule=formattedSchedule)
     elif request.method == 'GET':
-        flash("Generating schedule with no user history", "info")
-        return render_template('schedule.html', schedule=get_schedule("Computer Science"))
+        #flash("Generating schedule with no user history", "info")
+        return render_template('schedule.html', schedule=getClasslistFromDB())
 
 
 @login_required
@@ -231,8 +257,25 @@ def about():
     return render_template('about.html')
 
 ##Actions
+def hasSchedule():
+    if current_user.schedule:
+        return True
+    return False
+
+def pushClasslistToDB(generatedSchedule):
+    current_user.schedule=json.dumps(generatedSchedule)
+    db.session.commit()
+
+def getClasslistFromDB():
+    if current_user.schedule:
+        return json.loads(current_user.schedule)
+    else:
+        return ""
+
 def get_courses_for_major(selectedMajor):
     majorRequirements = ['General University Requirements', selectedMajor]
+    if selectedMajor == 'None':
+        majorRequirements = []
 
     #Query for all the course requirement id's, now its more dynamic in case our DB changes
     requirements=model.Requirement.query.filter(model.Requirement.major.in_(majorRequirements)).all()
@@ -280,6 +323,8 @@ def fix_prereqs(req_courses, history):
     schedule = collections.OrderedDict()
     history = [x.ident for x in history] if history else []
 
+    classes_checked = {}
+    recheck = []
     def add_prereqs(reqs):
         for r in reqs:
             # add prereqs to schedule
@@ -289,22 +334,27 @@ def fix_prereqs(req_courses, history):
                     needed_course = model.Course.query.filter_by(college=c, number=n).first()
                     if needed_course:
                         schedule[needed_course.ident] = ScheduledCourse(needed_course, r.requirement)
-                        #add_prereqs(ScheduledCourse(needed_course, r.requirement))
+                        recheck.append(needed_course)
                     else:
                         logging.warn("Couldn't find prereq {}".format(prereq))
+            classes_checked[r.course.ident] = True
             schedule[r.course.ident] = r
 
     reqs = sorted(req_courses, key=lambda x: x.course.ident)
     add_prereqs(reqs)
 
+    while len(classes_checked) != len(schedule):
+        while recheck:
+            add_prereqs([ScheduledCourse(recheck.pop(), None)])
+
     return schedule.values()
 
-def get_schedule(major, history=None):
+def get_schedule(major, history=None, classes_per_semester=5):
     listing = fix_prereqs(list(get_required_courses(major, history)), history)
 
     #FIXME make sure prereqs are separated by at least a semester
     # yield chunks of 4
-    classes_per_semester = 5
+    #classes_per_semester = 5 #going to get passed instead
     for i in xrange(0, len(listing), classes_per_semester):
         yield listing[i:i+classes_per_semester]
 

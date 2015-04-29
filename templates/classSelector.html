@@ -8,13 +8,25 @@
 <div class="jumbotron">
     <div class="container">
 	<div>
+<form name='majorSelect' method='get'>
     <select name='majorSelected' id='majorSelector'>
       {% if selectedMajor == 'None' %}<option value="None">Please Select Your Major</option>{%endif%}
-      <option value="Computer Science" {% if selectedMajor == 'CS' %}selected{%endif%}>Computer Science</option>
-      <option value="Management Information Systems" {% if selectedMajor == 'MIS' %}selected{%endif%}>Management Information Systems</option>
-      <option value="Information Assurance" {% if selectedMajor == 'IA' %}selected{%endif%}>Information Assurance</option>
-      <option value="Bioinformatics" {% if selectedMajor == 'BIOI' %}selected{%endif%}>Bioinformatics</option>
+      <option value="Computer Science" {% if selectedMajor == 'Computer Science' %}selected{%endif%}>Computer Science</option>
+      <option value="Management Information Systems" {% if selectedMajor == 'Management Information Systems' %}selected{%endif%}>Management Information Systems</option>
+      <option value="Information Assurance" {% if selectedMajor == 'Information Assurance' %}selected{%endif%}>Information Assurance</option>
+      <option value="Bioinformatics" {% if selectedMajor == 'Bioinformatics' %}selected{%endif%}>Bioinformatics</option>
     </select>
+
+	<select name='creditNum' id='creditNum'>
+		{% if creditNum == 'None' %}<option value="None">Credit Hours</option>{%endif%}
+		<option value="9" {% if creditNum == '9' %}selected{%endif%}>9</option>
+		<option value="12" {% if creditNum == '12' %}selected{%endif%}>12</option>
+		<option value="15" {% if creditNum == '15' %}selected{%endif%}>15</option>
+		<option value="18" {% if creditNum == '18' %}selected{%endif%}>18</option>
+		<option value="21" {% if creditNum == '21' %}selected{%endif%}>21</option>
+	</select>
+<input type='submit' />
+</form>
     <br><br>
 	</div>
 	<!--TODO: Sort them so they are displayed in numerical order, probably need to be done server side
@@ -68,7 +80,7 @@
 			{% set counter=0 %}
 		{% endif %}
 		{% if rowCounter != ROW_MAX %}
-				<td><button type="button" onclick='buttonClicked(this)'>{{course.number}}</button></td>
+        <td><button data-toggle="popover" data-placement="left" data-content="{{ course.title }}" type="button" onclick='buttonClicked(this)'>{{course.number}}</button></td>
 		{% endif %}
 		{% set counter=counter+1 %}
 		{% set courseBefore=course.college %}
@@ -78,9 +90,8 @@
         </table>
         </div>
 <!--Ends out the loop for the classes-->
-
+	<button type="button" class='finalSubmitButton btn btn-success' onclick='submitButtonClicked()'>Submit My Classes!</button>
     </div>
-    <button type="button" class='finalSubmitButton' onclick='submitButtonClicked()'>Submit My Classes!</button>
 
 </div>
 
@@ -119,7 +130,8 @@
 				data.classes[0][classHead].push(classNumber);
 			}
  	   	}
-		data.options[0]['creditsLoad'] = '15';
+		
+		data.options[0]['creditsLoad'] = $('#creditNum').val();
 		data.options[0]['majorSelected']=$('#majorSelector').val();
 
         var url = "/schedule";
