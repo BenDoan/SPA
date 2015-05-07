@@ -1,11 +1,9 @@
 body {
     padding-top: 20px;
     padding-bottom: 20px;
+    background-image: url('/static/img/congruent_pentagon.png');
 }
 
-nav.navbar .username {
-    color: #ddd;
-}
 
 .modal-dialog {
     width: 100% !important;

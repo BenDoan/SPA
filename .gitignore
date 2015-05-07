@@ -54,6 +54,8 @@ docs/_build/
 target/
 
 static/*/gen
+static/css/gen
+static/css/gen/*
 static/.webassets-cache/
 
 .webassets-cache
