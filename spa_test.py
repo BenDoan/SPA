@@ -6,6 +6,7 @@ import json
 import os
 import tempfile
 import unittest
+import logging
 
 class TestScheduler(unittest.TestCase):
 
@@ -13,9 +14,33 @@ class TestScheduler(unittest.TestCase):
         self.app = server.app.test_client()
         self.db, server.app.config['DATABASE'] = tempfile.mkstemp()
         server.app.config['TESTING'] = True
+        logging.disable(logging.CRITICAL)
+
+    def verify_courses(self, courses):
+        self.assertTrue(len(courses) > 25)
+        self.assertTrue(all(courses))
 
     def test_get_schedule(self):
-        print(server.get_schedule)
+        courses = server.get_schedule("Computer Science")
+        flat_courses = [x for y in courses for x in y]
+        self.verify_courses(flat_courses)
+
+    def test_get_schedule_majors(self):
+        courses = server.get_schedule("Computer Science")
+        flat_courses = [x for y in courses for x in y]
+        self.verify_courses(flat_courses)
+
+        courses = server.get_schedule("Bioinformatics")
+        flat_courses = [x for y in courses for x in y]
+        self.verify_courses(flat_courses)
+
+        courses = server.get_schedule("Information Assurance")
+        flat_courses = [x for y in courses for x in y]
+        self.verify_courses(flat_courses)
+
+        courses = server.get_schedule("Management Information Systems")
+        flat_courses = [x for y in courses for x in y]
+        self.verify_courses(flat_courses)
 
     def tearDown(self):
         os.close(self.db)
