@@ -42,6 +42,15 @@ class TestScheduler(unittest.TestCase):
         flat_courses = [x for y in courses for x in y]
         self.verify_courses(flat_courses)
 
+    def login(self, username, password):
+        return self.app.post('/signin', data=dict(
+            name=username,
+            password=password
+        ), follow_redirects=True)
+
+    def test_user(self):
+        self.login('user', 'password')
+
     def tearDown(self):
         os.close(self.db)
         os.unlink(server.app.config['DATABASE'])

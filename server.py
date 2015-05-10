@@ -103,14 +103,14 @@ def login():
     if form.validate_on_submit():
         users = model.User.query.filter_by(username = request.form["name"])
         user = users.first()
-        if user != None :
+        if user != None:
             if pbkdf2_sha256.verify(request.form["password"],user.password) :
                 user.authenticated = True
                 db.session.commit()
                 login_user(user)
                 return redirect("/")
         error = "incorrect username or password"
-    return render_template("signin.html",form = form,error = error);
+    return render_template("signin.html", form=form, error=error);
 
 @app.route('/signup', methods=['GET','POST'])
 def signup():
@@ -146,6 +146,9 @@ def getuser():
 def signout():
     logout_user()
     return redirect('/signin')
+
+def get_current_user():
+    return current_user
 
 @login_required
 @app.route('/deleteSchedule')
@@ -364,7 +367,6 @@ def get_schedule(major, history=None, classes_per_semester=5):
 @app.route('/img/<remainder>',methods=['GET'])
 def get_static(remainder):
     return send_from_directory(app.static_folder,request.path[1:])
-
 
 app.secret_key = "Secret"
 
