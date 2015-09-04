@@ -12,3 +12,8 @@ pip install -r requirements.txt
 python setup.py #sets up database
 python server.py #runs server
 ```
+## Screenshots
+
+![screenshot](screenshots/screenshot1.png "Screenshot")
+![screenshot](screenshots/screenshot2.png "Screenshot")
+![screenshot](screenshots/screenshot3.png "Screenshot")
